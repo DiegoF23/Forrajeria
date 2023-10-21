@@ -30,6 +30,7 @@ CREATE TABLE Productos (
     ProveedorID INT
 );
 
+
 -- Crear la tabla Clientes
 CREATE TABLE Clientes (
     ClienteID INT IDENTITY(1,1) PRIMARY KEY,
@@ -62,6 +63,7 @@ CREATE TABLE Proveedores (
     Telefono NVARCHAR(15)
 );
 
+
 -- Crear la tabla Compras
 CREATE TABLE Compras (
    CompraID INT IDENTITY(1,1) PRIMARY KEY,
@@ -77,22 +79,23 @@ ADD CONSTRAINT FK_Productos_Proveedores FOREIGN KEY (ProveedorID) REFERENCES Pro
 ALTER TABLE Compras
 ADD CONSTRAINT FK_Compras_Proveedores FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID);
 
---PROCEDIMIENTO ALMACENADO PARA LOGUEAR
 
-CREATE PROCEDURE ingreso_PA
-	@user NVARCHAR(80),
-	@pass NVARCHAR(80)
-AS
-BEGIN
- SELECT * FROM Usuarios 
-	WHERE NombreUsuario=@user
-		AND Pass=@pass;
-END;
 
 --Ingreso usuario Adminstrador
 INSERT INTO Usuarios(NombreUsuario,Pass,NombreCompleto,Rol)
 VALUES('admin','admin','Administrador','Administrador');
 
+
+
+insert into Proveedores(Nombre,Direccion,Telefono ) 
+values ('ProveedorEjemplo1','calle falsa 123','381551112234');
+
+insert into Productos(Nombre,Descripcion,Precio,Stock,ProveedorID)
+values ('Purina','Suplementos vitamínicos y minerales para animales.',3500,10,1);
+
+
 SELECT * FROM Usuarios;
+select * from Productos;
+select * from Proveedores;
 
 
