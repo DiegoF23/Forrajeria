@@ -107,11 +107,7 @@ namespace Forrajeria
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-            
-        }
+       
 
         
 
@@ -168,21 +164,10 @@ namespace Forrajeria
 
 
         /////////////////////////////////////////////////////////////////
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            AgregarProducto();
-        }
+        
         
 
-        private void btnAplicar_Click(object sender, EventArgs e)
-        {
-            EditarProductos();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            EliminarProductos();
-        }
+        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -205,5 +190,37 @@ namespace Forrajeria
                 }
             }
         }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDescripcion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            EliminarProductos();
+        }
+
+        private void btnAplicar_Click(object sender, EventArgs e)
+        {
+            EditarProductos();
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            AgregarProducto();
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+
+        
     }
 }
