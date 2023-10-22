@@ -50,9 +50,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
-            this.btnRestaurar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbNuevoProd.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +70,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Thistle;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -161,7 +162,7 @@
             this.btnAgregar.IconColor = System.Drawing.Color.Black;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 20;
-            this.btnAgregar.Location = new System.Drawing.Point(102, 375);
+            this.btnAgregar.Location = new System.Drawing.Point(102, 376);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(90, 42);
             this.btnAgregar.TabIndex = 27;
@@ -188,6 +189,7 @@
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnAplicar
@@ -208,6 +210,7 @@
             this.btnAplicar.Text = "APLICAR";
             this.btnAplicar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAplicar.UseVisualStyleBackColor = false;
+            this.btnAplicar.Visible = false;
             this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // txtProveedor
@@ -305,30 +308,22 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(98, 7);
+            this.txtBuscar.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(88, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(376, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(376, 27);
             this.txtBuscar.TabIndex = 26;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(45, 10);
+            this.lblBuscar.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblBuscar.Location = new System.Drawing.Point(15, 3);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(43, 13);
+            this.lblBuscar.Size = new System.Drawing.Size(77, 26);
             this.lblBuscar.TabIndex = 26;
             this.lblBuscar.Text = "Buscar:";
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.Location = new System.Drawing.Point(496, 3);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(73, 26);
-            this.btnRestaurar.TabIndex = 26;
-            this.btnRestaurar.Text = "Restaurar";
-            this.btnRestaurar.UseVisualStyleBackColor = true;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
             // panel1
             // 
@@ -343,12 +338,30 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.dgvProductos);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(307, 35);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(651, 416);
             this.panel3.TabIndex = 30;
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.FlatAppearance.BorderSize = 0;
+            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurar.IconChar = FontAwesome.Sharp.IconChar.Retweet;
+            this.btnRestaurar.IconColor = System.Drawing.Color.Black;
+            this.btnRestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRestaurar.IconSize = 20;
+            this.btnRestaurar.Location = new System.Drawing.Point(470, 5);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(106, 24);
+            this.btnRestaurar.TabIndex = 2;
+            this.btnRestaurar.Text = "RESTAURAR";
+            this.btnRestaurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestaurar.UseVisualStyleBackColor = true;
             // 
             // Productos
             // 
@@ -393,8 +406,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblBuscar;
-        private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton btnRestaurar;
     }
 }

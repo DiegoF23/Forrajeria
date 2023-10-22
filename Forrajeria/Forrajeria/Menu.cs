@@ -120,6 +120,7 @@ namespace Forrajeria
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.colorRosa);
+            OpenChildForm(new Proveedores());
         }
 
         private void btnProducto_Click(object sender, EventArgs e)

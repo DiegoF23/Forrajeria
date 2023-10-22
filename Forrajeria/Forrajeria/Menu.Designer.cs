@@ -43,14 +43,14 @@
             this.lblTituloFormularioHijo = new System.Windows.Forms.Label();
             this.iconCurrentChild = new FontAwesome.Sharp.IconPictureBox();
             this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.btnProductos = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.pnlControles.SuspendLayout();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChild)).BeginInit();
-            this.btnProductos = new System.Windows.Forms.Button();
-            this.btnProveedor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -65,7 +65,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(194, 528);
+            this.panelMenu.Size = new System.Drawing.Size(194, 503);
             this.panelMenu.TabIndex = 5;
             // 
             // iconButton4
@@ -80,7 +80,7 @@
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 40;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 463);
+            this.iconButton4.Location = new System.Drawing.Point(0, 438);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton4.Size = new System.Drawing.Size(194, 65);
@@ -220,7 +220,7 @@
             this.pnlControles.Location = new System.Drawing.Point(194, 0);
             this.pnlControles.Name = "pnlControles";
             this.pnlControles.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlControles.Size = new System.Drawing.Size(967, 20);
+            this.pnlControles.Size = new System.Drawing.Size(903, 20);
             this.pnlControles.TabIndex = 8;
             this.pnlControles.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraTitulo_Paint);
             this.pnlControles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlControles_MouseDown);
@@ -236,7 +236,7 @@
             this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 25;
-            this.btnClose.Location = new System.Drawing.Point(913, 2);
+            this.btnClose.Location = new System.Drawing.Point(849, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(52, 16);
             this.btnClose.TabIndex = 2;
@@ -251,7 +251,7 @@
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(194, 20);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(967, 39);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(903, 39);
             this.pnlBarraTitulo.TabIndex = 10;
             // 
             // lblTituloFormularioHijo
@@ -286,8 +286,15 @@
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritorio.Location = new System.Drawing.Point(194, 59);
             this.panelEscritorio.Name = "panelEscritorio";
-            this.panelEscritorio.Size = new System.Drawing.Size(967, 469);
+            this.panelEscritorio.Size = new System.Drawing.Size(903, 444);
             this.panelEscritorio.TabIndex = 11;
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.Location = new System.Drawing.Point(0, 0);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(75, 23);
+            this.btnProductos.TabIndex = 12;
             // 
             // btnProveedor
             // 
@@ -310,15 +317,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(1161, 528);
+            this.ClientSize = new System.Drawing.Size(1097, 503);
             this.Controls.Add(this.panelEscritorio);
             this.Controls.Add(this.pnlBarraTitulo);
             this.Controls.Add(this.pnlControles);
             this.Controls.Add(this.panelMenu);
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnProveedor);
             this.Controls.Add(this.btnProductos);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
