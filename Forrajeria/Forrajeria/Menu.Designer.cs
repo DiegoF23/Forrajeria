@@ -38,11 +38,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.pnlControles = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
+            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.lblTituloFormularioHijo = new System.Windows.Forms.Label();
             this.iconCurrentChild = new FontAwesome.Sharp.IconPictureBox();
             this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
@@ -51,6 +54,8 @@
             this.pnlControles.SuspendLayout();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChild)).BeginInit();
+            this.panelEscritorio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -215,15 +220,53 @@
             // pnlControles
             // 
             this.pnlControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.pnlControles.Controls.Add(this.btnMinimizar);
+            this.pnlControles.Controls.Add(this.btnMaximizar);
             this.pnlControles.Controls.Add(this.btnClose);
             this.pnlControles.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlControles.Location = new System.Drawing.Point(194, 0);
             this.pnlControles.Name = "pnlControles";
             this.pnlControles.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlControles.Size = new System.Drawing.Size(903, 20);
+            this.pnlControles.Size = new System.Drawing.Size(903, 27);
             this.pnlControles.TabIndex = 8;
             this.pnlControles.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraTitulo_Paint);
             this.pnlControles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlControles_MouseDown);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.btnMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnMinimizar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizar.IconSize = 25;
+            this.btnMinimizar.Location = new System.Drawing.Point(787, 2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(38, 23);
+            this.btnMinimizar.TabIndex = 4;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.btnMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.Maximize;
+            this.btnMaximizar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximizar.IconSize = 25;
+            this.btnMaximizar.Location = new System.Drawing.Point(825, 2);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(38, 23);
+            this.btnMaximizar.TabIndex = 3;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
             // btnClose
             // 
@@ -236,9 +279,9 @@
             this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 25;
-            this.btnClose.Location = new System.Drawing.Point(849, 2);
+            this.btnClose.Location = new System.Drawing.Point(863, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(52, 16);
+            this.btnClose.Size = new System.Drawing.Size(38, 23);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -249,7 +292,7 @@
             this.pnlBarraTitulo.Controls.Add(this.lblTituloFormularioHijo);
             this.pnlBarraTitulo.Controls.Add(this.iconCurrentChild);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBarraTitulo.Location = new System.Drawing.Point(194, 20);
+            this.pnlBarraTitulo.Location = new System.Drawing.Point(194, 27);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
             this.pnlBarraTitulo.Size = new System.Drawing.Size(903, 39);
             this.pnlBarraTitulo.TabIndex = 10;
@@ -283,11 +326,24 @@
             // panelEscritorio
             // 
             this.panelEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panelEscritorio.Controls.Add(this.pictureBox1);
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEscritorio.Location = new System.Drawing.Point(194, 59);
+            this.panelEscritorio.Location = new System.Drawing.Point(194, 66);
             this.panelEscritorio.Name = "panelEscritorio";
-            this.panelEscritorio.Size = new System.Drawing.Size(903, 444);
+            this.panelEscritorio.Size = new System.Drawing.Size(903, 437);
             this.panelEscritorio.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Forrajeria.Properties.Resources._1697931354207;
+            this.pictureBox1.Location = new System.Drawing.Point(279, 72);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(389, 249);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // btnProductos
             // 
@@ -334,6 +390,8 @@
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChild)).EndInit();
+            this.panelEscritorio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,5 +415,8 @@
 
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnProveedor;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton btnMinimizar;
+        private FontAwesome.Sharp.IconButton btnMaximizar;
     }
 }
