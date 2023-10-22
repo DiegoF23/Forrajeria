@@ -30,7 +30,7 @@
         {
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.gbNuevoProd = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
@@ -40,7 +40,13 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAplicar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnRestaurar = new System.Windows.Forms.Button();
+            this.txtProveedor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbNuevoProd.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +61,15 @@
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(677, 575);
             this.dgvProductos.TabIndex = 1;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // gbNuevoProd
             // 
+            this.gbNuevoProd.Controls.Add(this.txtProveedor);
+            this.gbNuevoProd.Controls.Add(this.btnEliminar);
+            this.gbNuevoProd.Controls.Add(this.btnAplicar);
+            this.gbNuevoProd.Controls.Add(this.btnCancelar);
             this.gbNuevoProd.Controls.Add(this.btnAgregar);
-            this.gbNuevoProd.Controls.Add(this.textBox5);
             this.gbNuevoProd.Controls.Add(this.lblProveedor);
             this.gbNuevoProd.Controls.Add(this.txtStock);
             this.gbNuevoProd.Controls.Add(this.lblStock);
@@ -76,12 +86,15 @@
             this.gbNuevoProd.TabStop = false;
             this.gbNuevoProd.Text = "Nuevo Producto";
             // 
-            // textBox5
+            // btnAgregar
             // 
-            this.textBox5.Location = new System.Drawing.Point(91, 198);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(190, 20);
-            this.textBox5.TabIndex = 21;
+            this.btnAgregar.Location = new System.Drawing.Point(138, 256);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(90, 50);
+            this.btnAgregar.TabIndex = 22;
+            this.btnAgregar.Text = "Agregar Producto";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblProveedor
             // 
@@ -156,20 +169,82 @@
             this.lblNombre.TabIndex = 12;
             this.lblNombre.Text = "Nombre:";
             // 
-            // btnAgregar
+            // btnCancelar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(191, 254);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(90, 50);
-            this.btnAgregar.TabIndex = 22;
-            this.btnAgregar.Text = "Agregar Producto";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(234, 256);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 50);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAplicar
+            // 
+            this.btnAplicar.Location = new System.Drawing.Point(42, 256);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(90, 50);
+            this.btnAplicar.TabIndex = 24;
+            this.btnAplicar.Text = "Guardar Cambios";
+            this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Visible = false;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(138, 256);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(90, 50);
+            this.btnEliminar.TabIndex = 25;
+            this.btnEliminar.Text = "Eliminar Producto";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(402, 21);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(43, 13);
+            this.lblBuscar.TabIndex = 26;
+            this.lblBuscar.Text = "Buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(455, 18);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(376, 20);
+            this.txtBuscar.TabIndex = 26;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Location = new System.Drawing.Point(853, 14);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(73, 26);
+            this.btnRestaurar.TabIndex = 26;
+            this.btnRestaurar.Text = "Restaurar";
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.FormattingEnabled = true;
+            this.txtProveedor.Location = new System.Drawing.Point(91, 198);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(190, 21);
+            this.txtProveedor.TabIndex = 26;
+            this.txtProveedor.SelectedIndexChanged += new System.EventHandler(this.txtProveedor_SelectedIndexChanged);
             // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 672);
+            this.Controls.Add(this.btnRestaurar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.gbNuevoProd);
             this.Controls.Add(this.dgvProductos);
             this.Name = "Productos";
@@ -178,6 +253,7 @@
             this.gbNuevoProd.ResumeLayout(false);
             this.gbNuevoProd.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -185,7 +261,6 @@
 
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.GroupBox gbNuevoProd;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label lblStock;
@@ -196,5 +271,12 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAplicar;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnRestaurar;
+        private System.Windows.Forms.ComboBox txtProveedor;
     }
 }
