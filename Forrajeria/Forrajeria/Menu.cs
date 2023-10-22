@@ -23,5 +23,11 @@ namespace Forrajeria
             mainProductos.ShowDialog();
             //this.Hide();
         }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            Proveedores mainProveedor = new Proveedores();
+            mainProveedor.ShowDialog();
+        }
     }
 }

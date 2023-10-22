@@ -91,3 +91,51 @@ as
 begin
 select ProveedorID, Nombre from Proveedores;
 end;
+
+
+--Proveedores
+
+--Crear un registro (CREATE):
+
+CREATE PROCEDURE sp_InsertarProveedor
+    @Nombre NVARCHAR(255),
+    @Direccion NVARCHAR(255),
+    @Telefono NVARCHAR(15)
+AS
+BEGIN
+    INSERT INTO Proveedores (Nombre, Direccion, Telefono)
+    VALUES (@Nombre, @Direccion, @Telefono);
+END;
+
+
+--Leer registros (READ):
+
+CREATE PROCEDURE sp_ListarProveedores
+AS
+BEGIN
+    SELECT * FROM Proveedores;
+END;
+
+--Actualizar un registro (UPDATE):
+
+CREATE PROCEDURE sp_ActualizarProveedor
+    @ProveedorID INT,
+    @Nombre NVARCHAR(255),
+    @Direccion NVARCHAR(255),
+    @Telefono NVARCHAR(15)
+AS
+BEGIN
+    UPDATE Proveedores
+    SET Nombre = @Nombre, Direccion = @Direccion, Telefono = @Telefono
+    WHERE ProveedorID = @ProveedorID;
+END;
+
+--Eliminar un registro (DELETE):
+
+CREATE PROCEDURE sp_EliminarProveedor
+    @ProveedorID INT
+AS
+BEGIN
+    DELETE FROM Proveedores
+    WHERE ProveedorID = @ProveedorID;
+END;

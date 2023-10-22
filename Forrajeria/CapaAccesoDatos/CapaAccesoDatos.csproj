@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CAD_Login.cs" />
     <Compile Include="CAD_Productos.cs" />
+    <Compile Include="CAD_Proveedor.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion_DB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
