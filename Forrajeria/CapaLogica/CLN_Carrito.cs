@@ -143,6 +143,14 @@ namespace CapaLogica
             objCarritoCAD.insertDetallesVenta(VentaID,ProductoID,Cantidad,PrecioUnitario);
         }
 
+       public int ObtenerNumeroFactura()
+        {
+            int idVenta;
+            idVenta = objCarritoCAD.ObtenerNroFactura();
+            return idVenta;
+               
+        }
+
 
 
     }

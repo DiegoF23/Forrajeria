@@ -29,6 +29,7 @@ namespace CapaAccesoDatos
         private SqlCommand Comando;
         int ClienteID;
         int VentaID;
+        int ultimoId;
 
         public CAD_Carrito()
         {
@@ -40,6 +41,8 @@ namespace CapaAccesoDatos
             Tabla5 = new DataTable();
             Tabla6 = new DataTable();
             Comando = new SqlCommand();
+           
+           
         }
 
         public DataTable ProductosDisponibles()
@@ -176,6 +179,31 @@ namespace CapaAccesoDatos
             Comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
+
+        public int ObtenerNroFactura()
+        {
+            int ultimoID = 0;
+
+            using (SqlConnection connection = objConexionCAD.abrirConexion())
+            {
+                using (SqlCommand command = new SqlCommand("ObtenerUltimoIDVenta", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Clear();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ultimoID = Convert.ToInt32(reader["UltimoIDVenta"]); 
+                        }
+                    }
+                }
+            }
+
+            return ultimoID;
+        }
+
 
 
     }

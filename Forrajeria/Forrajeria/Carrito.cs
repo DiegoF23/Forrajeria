@@ -245,6 +245,7 @@ namespace Forrajeria
             }
 
             MessageBox.Show("Cliente,Venta y detalles insertados");
+            GenerarFactura();
             limpiarCampos();
             MostrarProductos();
             lblTotal.Text = "Cantidad Productos: 0" ;
@@ -361,6 +362,7 @@ namespace Forrajeria
         private void btnPagar_Click(object sender, EventArgs e)
         {
             PagarCarrito();
+           
         }
 
         private void btnCancelarCarro_Click(object sender, EventArgs e)
@@ -380,6 +382,37 @@ namespace Forrajeria
             Carro.Clear();
             dgvCarrito.DataSource = Carro;
             MostrarProductos();
+        }
+
+        private void GenerarFactura()
+        {
+           
+            string cliente = nombre;
+            string direccionCliente = direccion;
+            string telefonoCliente = telefono;
+
+            int numeroFactura = objCarrito_CLN.ObtenerNumeroFactura(); 
+
+            DataTable detallesFactura = new DataTable();
+            detallesFactura.Columns.Add("Producto");
+            detallesFactura.Columns.Add("Cantidad");
+            detallesFactura.Columns.Add("Precio unitario");
+            detallesFactura.Columns.Add("Subtotal");
+            decimal importeTotal = 0;
+            foreach (DataRow row in Carro.Rows)
+            {
+                string producto = row["Nombre"].ToString();
+                int cantidad = (int)row["Cantidad"];
+                decimal precioUnitario = (decimal)row["Precio"];
+                decimal subtotal = cantidad * precioUnitario;
+
+                detallesFactura.Rows.Add(producto, cantidad, precioUnitario, subtotal);
+                importeTotal += subtotal;
+            }
+
+            FacturaForm facturaForm = new FacturaForm(numeroFactura, cliente, direccionCliente, telefonoCliente, detallesFactura, importeTotal);
+            facturaForm.ShowDialog();
+
         }
     }
 }
