@@ -139,3 +139,129 @@ BEGIN
     DELETE FROM Proveedores
     WHERE ProveedorID = @ProveedorID;
 END;
+
+----------------------------------------------------------------------------------
+--Carrito--------------------
+
+--Productos Disponibles
+create procedure ProductosDisponibles 
+as
+begin
+	select ProductoID as 'Codigo',Nombre,Descripcion,Stock,Precio from Productos
+		where Stock > 0;
+end;
+
+--Filtrar Productos Disponibles texto
+create procedure FiltroProdDispText
+@texto nvarchar(Max)
+as
+begin
+select ProductoID as 'Codigo',Nombre,Descripcion,Stock,Precio from Productos
+		where Stock > 0
+			and
+			  (	upper(Nombre) like UPPER('%'+@texto+'%'))
+				or
+					(upper(Descripcion) like upper('%'+@texto+'%'));
+end;
+-- Filtrar Productos Disponibles int
+create procedure FiltroProdDispInt
+	@idProducto int
+as
+begin
+	Select ProductoID as 'Codigo',Nombre,Descripcion,Stock,Precio From Productos as A
+
+	where Stock > 0 and ProductoID like @idProducto; 
+end;
+
+-- traer detalles de producto para agregar al carro
+create procedure productosDetalle
+@idProd int
+as
+begin
+	select Nombre, Precio from Productos
+		where ProductoID = @idProd ;
+end;
+
+--Disminuir stock de Productos
+
+create procedure restarStock
+@idProd int,
+@stock int
+as
+begin
+	update Productos
+	set
+		Stock-=@stock
+	where ProductoID= @idProd;
+end;
+
+--Restaurar Stock
+create procedure restaurarStock
+@idProd int,
+@stock int
+as
+begin
+	update Productos
+	set
+		Stock+=@stock
+	where ProductoID= @idProd;
+end;
+
+-- stock actual
+create procedure stockActual
+@idProd int
+as
+begin
+select Stock from Productos
+	where ProductoID= @idProd;
+end;
+
+--Finalizar Venta
+--cargar cliente y que devuelva el id generado
+CREATE PROCEDURE InsertarClienteYObtenerID
+(
+    @nombre NVARCHAR(255),
+    @direccion NVARCHAR(255),
+    @telefono NVARCHAR(15)
+)
+AS
+BEGIN
+    -- Insertar datos en la tabla
+    INSERT INTO Clientes (Nombre, Direccion,Telefono)
+	 VALUES (@nombre, @direccion,@telefono);
+
+    -- Obtener el ID generado
+    SELECT SCOPE_IDENTITY() AS ClienteID;
+END;
+
+--Cargar Venta
+CREATE PROCEDURE InsertarVentaYObtenerID
+(
+    @fecha NVARCHAR(255),
+    @ClienteID int
+)
+AS
+BEGIN
+    -- Insertar datos en la tabla
+    INSERT INTO Ventas(Fecha, ClienteID)
+	  VALUES (@fecha, @ClienteID);
+
+    -- Obtener el ID generado
+    SELECT SCOPE_IDENTITY() AS VentaID;
+END
+
+--Cargar DetallesVenta
+CREATE PROCEDURE InsertarDetallesVenta
+	@VentaID int,
+	@ProductoID int,
+	@Cantidad int,
+	@PrecioUnitario DECIMAL(10, 2)
+as
+begin
+	insert into DetallesVentas(VentaID,ProductoID,Cantidad,PrecioUnitario)
+	values(@VentaID,@ProductoID,@Cantidad,@PrecioUnitario);
+end;
+
+--select * from Clientes;
+--select * from Ventas;
+--select * from DetallesVentas;

@@ -45,7 +45,7 @@ CREATE TABLE Clientes (
 -- Crear la tabla Ventas
 CREATE TABLE Ventas (
     VentaID INT IDENTITY(1,1) PRIMARY KEY,
-    Fecha DATE NOT NULL,
+    Fecha nvarchar(255) NOT NULL,
     ClienteID INT,
 );
 
@@ -110,5 +110,8 @@ values ('Purina','Suplementos vitamínicos y minerales para animales.',3500,10,1)
 SELECT * FROM Usuarios;
 select * from Productos;
 select * from Proveedores;
+
+--update Productos
+--set stock=10
 
 

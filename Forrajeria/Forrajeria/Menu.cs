@@ -131,6 +131,7 @@ namespace Forrajeria
         private void btnVenta_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.colorRosa);
+            OpenChildForm(new Carrito());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
