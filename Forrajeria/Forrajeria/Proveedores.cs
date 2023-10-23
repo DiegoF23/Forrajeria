@@ -53,6 +53,7 @@ namespace Forrajeria
             direccion = txtDireccion.Text;
             telefono = txtTelefono.Text;
             
+            
         }
         private void AgregarProovedor()
         {
@@ -81,10 +82,7 @@ namespace Forrajeria
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            AgregarProovedor();
-        }
+       
 
 
         private void dgvProovedores_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -105,17 +103,22 @@ namespace Forrajeria
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-        }
-
         private void btnAplicar_Click(object sender, EventArgs e)
         {
             ModificarProovedor();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            AgregarProovedor();
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             EliminarProovedores();
         }

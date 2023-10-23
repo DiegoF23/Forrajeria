@@ -120,6 +120,7 @@ namespace Forrajeria
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.colorRosa);
+            OpenChildForm(new Proveedores());
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
@@ -136,6 +137,7 @@ namespace Forrajeria
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            currentChildForm.Close();
             Reset();
         }
 
@@ -166,6 +168,19 @@ namespace Forrajeria
         {
             Proveedores mainProveedor = new Proveedores();
             mainProveedor.ShowDialog();
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else
+                WindowState = FormWindowState.Normal;
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
