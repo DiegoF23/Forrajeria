@@ -180,6 +180,7 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
         }
 
+
         public int ObtenerNroFactura()
         {
             int ultimoID = 0;
