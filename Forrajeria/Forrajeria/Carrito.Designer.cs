@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -36,6 +37,10 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.gbProducto = new System.Windows.Forms.GroupBox();
+            this.txtCantidadEditar = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAplicar = new System.Windows.Forms.Button();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.btnAgregarCarro = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -54,10 +59,7 @@
             this.btnPagar = new System.Windows.Forms.Button();
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.btnAplicar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtCantidadEditar = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gbCliente.SuspendLayout();
             this.gbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -103,6 +105,7 @@
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(145, 20);
             this.txtNombreCliente.TabIndex = 3;
+            this.txtNombreCliente.Tag = "El campo es obligatorio";
             this.txtNombreCliente.TextChanged += new System.EventHandler(this.txtNombreCliente_TextChanged);
             // 
             // lblTelefono
@@ -153,6 +156,50 @@
             this.gbProducto.TabIndex = 1;
             this.gbProducto.TabStop = false;
             this.gbProducto.Text = "Producto";
+            // 
+            // txtCantidadEditar
+            // 
+            this.txtCantidadEditar.Location = new System.Drawing.Point(97, 136);
+            this.txtCantidadEditar.Name = "txtCantidadEditar";
+            this.txtCantidadEditar.Size = new System.Drawing.Size(57, 20);
+            this.txtCantidadEditar.TabIndex = 11;
+            this.txtCantidadEditar.Text = "1";
+            this.txtCantidadEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCantidadEditar.Visible = false;
+            this.txtCantidadEditar.TextChanged += new System.EventHandler(this.txtCantidadEditar_TextChanged);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(243, 169);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(73, 38);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(138, 169);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(73, 38);
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAplicar
+            // 
+            this.btnAplicar.Location = new System.Drawing.Point(26, 169);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(73, 38);
+            this.btnAplicar.TabIndex = 8;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Visible = false;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // lblSubTotal
             // 
@@ -339,49 +386,10 @@
             this.lblFecha.TabIndex = 8;
             this.lblFecha.Text = "Fecha:";
             // 
-            // btnAplicar
+            // toolTip1
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(26, 169);
-            this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(73, 38);
-            this.btnAplicar.TabIndex = 8;
-            this.btnAplicar.Text = "Aplicar";
-            this.btnAplicar.UseVisualStyleBackColor = true;
-            this.btnAplicar.Visible = false;
-            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(138, 169);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(73, 38);
-            this.btnEliminar.TabIndex = 9;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(243, 169);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(73, 38);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Visible = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // txtCantidadEditar
-            // 
-            this.txtCantidadEditar.Location = new System.Drawing.Point(97, 136);
-            this.txtCantidadEditar.Name = "txtCantidadEditar";
-            this.txtCantidadEditar.Size = new System.Drawing.Size(57, 20);
-            this.txtCantidadEditar.TabIndex = 11;
-            this.txtCantidadEditar.Text = "1";
-            this.txtCantidadEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCantidadEditar.Visible = false;
-            this.txtCantidadEditar.TextChanged += new System.EventHandler(this.txtCantidadEditar_TextChanged);
+            this.toolTip1.BackColor = System.Drawing.Color.IndianRed;
+            this.toolTip1.ForeColor = System.Drawing.SystemColors.Info;
             // 
             // Carrito
             // 
@@ -440,5 +448,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAplicar;
         private System.Windows.Forms.TextBox txtCantidadEditar;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -25,7 +25,7 @@ CREATE TABLE Usuarios (
 
 -- Crear la tabla Productos
 CREATE TABLE Productos (
-    ProductoID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductoID INT IDENTITY(100,1) PRIMARY KEY,
     Nombre NVARCHAR(255) NOT NULL,
     Descripcion NVARCHAR(MAX),
     Precio DECIMAL(10, 2) NOT NULL,
@@ -90,21 +90,79 @@ VALUES('admin','admin','Administrador','Administrador');
 
 
 --ingresos Proveedores
-insert into Proveedores(Nombre,Direccion,Telefono ) 
-values ('ProveedorEjemplo1','calle falsa 123','381551112234');
+INSERT INTO Proveedores(Nombre, Direccion, Telefono)
+VALUES ('ProveedorForraje', 'Avenida Verde 456', '381555556789');
 
-insert into Proveedores(Nombre,Direccion,Telefono ) 
-values ('ProveedorEjemplo2','calle falsa 12332','3815511234');
+-- Proveedor 3
+INSERT INTO Proveedores(Nombre, Direccion, Telefono)
+VALUES ('AgroSuministros', 'Calle de los Suministros 789', '381555554321');
 
-insert into Proveedores(Nombre,Direccion,Telefono ) 
-values ('ProveedorEjemplo3','calle frias silva 1231','381665441');
+-- Proveedor 4
+INSERT INTO Proveedores(Nombre, Direccion, Telefono)
+VALUES ('Forrajes y Más', 'Calle de los Agricultores 987', '381555557890');
 
-insert into Proveedores(Nombre,Direccion,Telefono ) 
-values ('ProveedorEjemplo4','calle lucero 321','381778855');
+-- Proveedor 5
+INSERT INTO Proveedores(Nombre, Direccion, Telefono)
+VALUES ('Alimentos para Animales S.A.', 'Avenida de los Alimentos 654', '381551112345');
 
 --ingresos Productos
 insert into Productos(Nombre,Descripcion,Precio,Stock,ProveedorID)
 values ('Purina','Suplementos vitamínicos y minerales para animales.',3500,10,1);
+-- Producto 2
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Alfalfa', 'Forraje de alta calidad para animales', 800, 20, 2);
+
+-- Producto 3
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Heno de avena', 'Alimento para roedores y conejos', 500, 15, 3);
+
+-- Producto 4
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Fertilizante orgánico', 'Mejora la calidad del suelo', 1200, 5, 1);
+
+-- Producto 5
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Granos de maíz', 'Alimento básico para animales de granja', 600, 30, 4);
+
+-- Producto 6
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Paja de trigo', 'Lecho para animales pequeños', 300, 25, 2);
+
+-- Producto 7
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Semillas de girasol', 'Snack para aves', 700, 10, 3);
+
+-- Producto 8
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Sal mineral', 'Suplemento para ganado', 900, 12, 1);
+
+-- Producto 9
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Heno de alfalfa', 'Forraje rico en proteínas', 850, 18, 2);
+
+-- Producto 10
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Avena', 'Grano para equinos', 750, 22, 3);
+
+-- Producto 11
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Suplemento de calcio', 'Mejora la salud de los huesos', 1200, 8, 1);
+
+-- Producto 12
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Piedras de sal', 'Bloques de sal para lamer', 400, 15, 4);
+
+-- Producto 13
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Pienso de conejo', 'Nutrición equilibrada para conejos', 900, 10, 3);
+
+-- Producto 14
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Fardos de heno', 'Gran cantidad de forraje', 1500, 5, 2);
+
+-- Producto 15
+INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
+VALUES ('Semillas de maíz', 'Alimento para aves y roedores', 650, 15, 1);
 
 
 SELECT * FROM Usuarios;

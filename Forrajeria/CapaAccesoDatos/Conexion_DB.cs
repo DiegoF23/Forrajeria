@@ -14,7 +14,7 @@ namespace CapaAccesoDatos
 
         public Conexion_DB()
         {
-            cadena = "Data Source=DESKTOP-CDBSAN0\\SQLEXPRESS;Initial Catalog = Forrajeria; Integrated Security=true";
+            cadena = "Data Source=DESKTOP-5D1LTV5\\SQLEXPRESS;Initial Catalog = Forrajeria; Integrated Security=true";
             conectar_DB = new SqlConnection();
             conectar_DB.ConnectionString = cadena;
 

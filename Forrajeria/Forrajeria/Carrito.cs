@@ -361,7 +361,19 @@ namespace Forrajeria
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            PagarCarrito();
+            if (string.IsNullOrEmpty(txtNombreCliente.Text))
+            {
+                System.Media.SystemSounds.Beep.Play();
+                toolTip1.Show("Este campo es obligatorio.", txtNombreCliente, new Point(txtNombreCliente.Width+1, 0), 1500);
+            }
+            else
+            {
+                toolTip1.Hide(txtNombreCliente);
+                PagarCarrito();
+                
+            }
+            
+            
            
         }
 
