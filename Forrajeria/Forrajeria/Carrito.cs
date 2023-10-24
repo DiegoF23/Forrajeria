@@ -245,7 +245,7 @@ namespace Forrajeria
             }
 
             MessageBox.Show("Cliente,Venta y detalles insertados");
-            GenerarFactura();
+            GenerarFactura(VentaID);
             limpiarCampos();
             MostrarProductos();
             lblTotal.Text = "Cantidad Productos: 0" ;
@@ -387,14 +387,14 @@ namespace Forrajeria
         
 
 
-        private void GenerarFactura()
+        private void GenerarFactura(int VentaID)
         {
 
             string cliente = nombre;
             string direccionCliente = direccion;
             string telefonoCliente = telefono;
 
-            int numeroFactura = objCarrito_CLN.ObtenerNumeroFactura();
+            int numeroFactura = VentaID; //objCarrito_CLN.ObtenerNumeroFactura()
 
             DataTable detallesFactura = new DataTable();
             detallesFactura.Columns.Add("Producto");
