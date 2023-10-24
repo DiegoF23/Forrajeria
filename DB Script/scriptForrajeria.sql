@@ -11,7 +11,7 @@ END
 -- Crear la base de datos Forrajeria
 CREATE DATABASE Forrajeria;
 
--- Usar la base de datos recién creada
+-- Usar la base de datos reciÃ©n creada
 USE Forrajeria;
 
 -- Crear la tabla Usuarios
@@ -48,6 +48,9 @@ CREATE TABLE Ventas (
     Fecha nvarchar(255) NOT NULL,
     ClienteID INT,
 );
+-- modificar tabla 
+ALTER TABLE Ventas
+ADD ImporteTotal DECIMAL(10, 2) NULL;
 
 -- Crear la tabla DetallesVentas
 CREATE TABLE DetallesVentas (
@@ -74,11 +77,18 @@ CREATE TABLE Compras (
    ProveedorID INT
 );
 
--- Agregar la restricción de clave foranea para la columna ProveedorID en la tabla Productos
+-- modficar tabla compras
+ALTER TABLE Compras
+ALTER COLUMN Fecha VARCHAR(50);
+-- agregar columna importe
+ALTER TABLE Compras
+ADD ImporteTotal DECIMAL(18, 2) NULL;
+
+-- Agregar la restricciÃ³n de clave foranea para la columna ProveedorID en la tabla Productos
 ALTER TABLE Productos
 ADD CONSTRAINT FK_Productos_Proveedores FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID);
 
--- Agregar la restricción de clave foranea para la columna ProveedorID en la tabla Compras
+-- Agregar la restricciÃ³n de clave foranea para la columna ProveedorID en la tabla Compras
 ALTER TABLE Compras
 ADD CONSTRAINT FK_Compras_Proveedores FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID);
 
@@ -99,7 +109,7 @@ VALUES ('AgroSuministros', 'Calle de los Suministros 789', '381555554321');
 
 -- Proveedor 4
 INSERT INTO Proveedores(Nombre, Direccion, Telefono)
-VALUES ('Forrajes y Más', 'Calle de los Agricultores 987', '381555557890');
+VALUES ('Forrajes y MÃ¡s', 'Calle de los Agricultores 987', '381555557890');
 
 -- Proveedor 5
 INSERT INTO Proveedores(Nombre, Direccion, Telefono)
@@ -107,7 +117,7 @@ VALUES ('Alimentos para Animales S.A.', 'Avenida de los Alimentos 654', '3815511
 
 --ingresos Productos
 insert into Productos(Nombre,Descripcion,Precio,Stock,ProveedorID)
-values ('Purina','Suplementos vitamínicos y minerales para animales.',3500,10,1);
+values ('Purina','Suplementos vitamÃ­nicos y minerales para animales.',3500,10,1);
 -- Producto 2
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
 VALUES ('Alfalfa', 'Forraje de alta calidad para animales', 800, 20, 2);
@@ -118,15 +128,15 @@ VALUES ('Heno de avena', 'Alimento para roedores y conejos', 500, 15, 3);
 
 -- Producto 4
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
-VALUES ('Fertilizante orgánico', 'Mejora la calidad del suelo', 1200, 5, 1);
+VALUES ('Fertilizante orgÃ¡nico', 'Mejora la calidad del suelo', 1200, 5, 1);
 
 -- Producto 5
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
-VALUES ('Granos de maíz', 'Alimento básico para animales de granja', 600, 30, 4);
+VALUES ('Granos de maÃ­z', 'Alimento bÃ¡sico para animales de granja', 600, 30, 4);
 
 -- Producto 6
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
-VALUES ('Paja de trigo', 'Lecho para animales pequeños', 300, 25, 2);
+VALUES ('Paja de trigo', 'Lecho para animales pequeÃ±os', 300, 25, 2);
 
 -- Producto 7
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
@@ -138,7 +148,7 @@ VALUES ('Sal mineral', 'Suplemento para ganado', 900, 12, 1);
 
 -- Producto 9
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
-VALUES ('Heno de alfalfa', 'Forraje rico en proteínas', 850, 18, 2);
+VALUES ('Heno de alfalfa', 'Forraje rico en proteÃ­nas', 850, 18, 2);
 
 -- Producto 10
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
@@ -154,7 +164,7 @@ VALUES ('Piedras de sal', 'Bloques de sal para lamer', 400, 15, 4);
 
 -- Producto 13
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
-VALUES ('Pienso de conejo', 'Nutrición equilibrada para conejos', 900, 10, 3);
+VALUES ('Pienso de conejo', 'NutriciÃ³n equilibrada para conejos', 900, 10, 3);
 
 -- Producto 14
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
@@ -162,7 +172,7 @@ VALUES ('Fardos de heno', 'Gran cantidad de forraje', 1500, 5, 2);
 
 -- Producto 15
 INSERT INTO Productos(Nombre, Descripcion, Precio, Stock, ProveedorID)
-VALUES ('Semillas de maíz', 'Alimento para aves y roedores', 650, 15, 1);
+VALUES ('Semillas de maÃ­z', 'Alimento para aves y roedores', 650, 15, 1);
 
 
 SELECT * FROM Usuarios;
