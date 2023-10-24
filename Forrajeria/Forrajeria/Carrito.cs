@@ -370,47 +370,21 @@ namespace Forrajeria
         private void btnPagar_Click_1(object sender, EventArgs e)
         {
             //actual
-            PagarCarrito();
-        }
-
-        private void btnCancelarCarro_Click_1(object sender, EventArgs e){
             if (string.IsNullOrEmpty(txtNombreCliente.Text))
             {
                 System.Media.SystemSounds.Beep.Play();
-                toolTip1.Show("Este campo es obligatorio.", txtNombreCliente, new Point(txtNombreCliente.Width+1, 0), 1500);
+                toolTip1.Show("Este campo es obligatorio.", txtNombreCliente, new Point(txtNombreCliente.Width + 1, 0), 1500);
             }
             else
             {
                 toolTip1.Hide(txtNombreCliente);
                 PagarCarrito();
-                
+
             }
-            
-            
-           
+
         }
 
-        private void btnCancelarCarro_Click(object sender, EventArgs e)
-        {
-            //actual
-
-            limpiarCampos();
-
-            lblTotal.Text = "Cantidad Productos: 0";
-            lblTotalCarrito.Text = "$0.00";
-            foreach (DataRow row in Carro.Rows)
-            {
-                int prodID;
-                int cant;
-                prodID = Convert.ToInt32(row["Codigo"]);
-                cant = Convert.ToInt32(row["Cantidad"]);
-                objCarrito_CLN.RestaurarStock(prodID, cant);
-            }
-            Carro.Clear();
-            dgvCarrito.DataSource = Carro;
-            MostrarProductos();
-        }
-
+        
 
 
         private void GenerarFactura()
@@ -442,6 +416,27 @@ namespace Forrajeria
             FacturaForm facturaForm = new FacturaForm(numeroFactura, cliente, direccionCliente, telefonoCliente, detallesFactura, importeTotal);
             facturaForm.ShowDialog();
 
+        }
+
+        private void btnCancelarCarro_Click_1(object sender, EventArgs e)
+        {
+            //actual
+
+            limpiarCampos();
+
+            lblTotal.Text = "Cantidad Productos: 0";
+            lblTotalCarrito.Text = "$0.00";
+            foreach (DataRow row in Carro.Rows)
+            {
+                int prodID;
+                int cant;
+                prodID = Convert.ToInt32(row["Codigo"]);
+                cant = Convert.ToInt32(row["Cantidad"]);
+                objCarrito_CLN.RestaurarStock(prodID, cant);
+            }
+            Carro.Clear();
+            dgvCarrito.DataSource = Carro;
+            MostrarProductos();
         }
     }
 }
