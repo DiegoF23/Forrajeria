@@ -4,10 +4,17 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.TextFormatting;
+using System.Windows.Media;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing.Layout;
+using System.Globalization;
 
 namespace Forrajeria
 {
@@ -53,43 +60,32 @@ namespace Forrajeria
             this.Controls.Add(dgvDetallesFactura);
         }
 
+
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrintPage += new PrintPageEventHandler(GenerarFactura_PrintPage);
+            string pdfFileName = "factura.pdf"; // Nombre del archivo PDF
 
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printDocument;
+            PdfDocument document = new PdfDocument();
+            document.Info.Title = "Factura";
 
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                printDocument.Print();
-            }
-        }
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XFont font = new XFont("Arial", 12);
 
-        private void GenerarFactura_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            // Dibuja la factura en la página de impresión
-            Graphics g = e.Graphics;
+            XTextFormatter tf = new XTextFormatter(gfx);
+            int yPosition = 50;
 
-            // Configura la fuente y las coordenadas para dibujar el contenido de la factura
-            Font font = new Font("Arial", 12);
-            float x = 10;
-            float y = 10;
+            // Agregar el contenido de la factura al PDF
+            tf.DrawString($"Factura #{numeroFactura}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+            yPosition += 20;
+            tf.DrawString($"Cliente: {cliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+            yPosition += 20;
+            tf.DrawString($"Dirección: {direccionCliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+            yPosition += 20;
+            tf.DrawString($"Teléfono: {telefonoCliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
 
-            g.DrawString($"Factura #{numeroFactura}", font, Brushes.Black, x, y);
-            y += font.GetHeight();
-
-            g.DrawString($"Cliente: {cliente}", font, Brushes.Black, x, y);
-            y += font.GetHeight();
-
-            g.DrawString($"Dirección: {direccionCliente}", font, Brushes.Black, x, y);
-            y += font.GetHeight();
-
-            g.DrawString($"Teléfono: {telefonoCliente}", font, Brushes.Black, x, y);
-            y += font.GetHeight();
-
-            // Dibuja los detalles de la factura desde la DataTable
+            // Dibujar los detalles de la factura desde la DataTable
+            yPosition += 20;
             foreach (DataRow row in detallesFactura.Rows)
             {
                 string producto = row["Producto"].ToString();
@@ -97,17 +93,26 @@ namespace Forrajeria
                 string precioUnitario = row["Precio unitario"].ToString();
                 string subtotal = row["Subtotal"].ToString();
 
-                g.DrawString(producto, font, Brushes.Black, x, y);
-                g.DrawString(cantidad, font, Brushes.Black, x + 200, y);
-                g.DrawString(precioUnitario, font, Brushes.Black, x + 300, y);
-                g.DrawString(subtotal, font, Brushes.Black, x + 400, y);
+                tf.DrawString(producto, font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+                yPosition += 20;
+                tf.DrawString(cantidad, font, XBrushes.Black, new XRect(250, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+                tf.DrawString(precioUnitario, font, XBrushes.Black, new XRect(350, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+                tf.DrawString(subtotal, font, XBrushes.Black, new XRect(450, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
 
-                y += font.GetHeight();
+                yPosition += 20;
             }
 
-            // Dibuja el importe total al final de la factura
-            y += 20;
-            g.DrawString($"Importe Total: {importeTotal:C}", font, Brushes.Black, x, y);
+            // Dibujar el importe total al final de la factura
+            yPosition += 20;
+            CultureInfo culture = new CultureInfo("es-AR"); // Configura la cultura para pesos argentinos
+            string importeTotalFormatted = importeTotal.ToString("C", culture); // Formatea el importe total en pesos argentinos
+            tf.DrawString($"Importe Total: {importeTotalFormatted}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+
+            // Guardar el documento PDF
+            document.Save(pdfFileName);
+
+            // Abre el archivo PDF en el visor de PDF predeterminado
+            System.Diagnostics.Process.Start(pdfFileName);
         }
     }
 }
