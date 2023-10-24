@@ -33,7 +33,7 @@ namespace Forrajeria
         {
             // public static Color color1 = Color.FromArgb(228,174,197);
 
-            public static Color colorRosa = Color.FromArgb(241, 180, 187);
+            public static Color colorRosa = Color.FromArgb(231, 171, 154);
 
         }
         //Methods
@@ -45,7 +45,7 @@ namespace Forrajeria
                 //Button
                 currentBtn = (IconButton)senderBtn;
                 ///////////////
-                currentBtn.BackColor = Color.FromArgb(31, 65, 114);
+                currentBtn.BackColor = Color.FromArgb(37,79, 101);
                 ///////////////
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -67,7 +67,7 @@ namespace Forrajeria
             if (currentBtn != null)
             {
                 ////////////////////
-                currentBtn.BackColor = Color.FromArgb(19, 32, 67);
+                currentBtn.BackColor = Color.FromArgb(18, 38, 49);
                 currentBtn.ForeColor = Color.FromArgb(235, 240, 240);
                 /////////////////////
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;

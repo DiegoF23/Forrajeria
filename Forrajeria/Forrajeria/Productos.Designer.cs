@@ -51,8 +51,8 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnRestaurar = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbNuevoProd.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,7 +104,7 @@
             // 
             // gbNuevoProd
             // 
-            this.gbNuevoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.gbNuevoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.gbNuevoProd.Controls.Add(this.btnCancelar);
             this.gbNuevoProd.Controls.Add(this.btnAgregar);
             this.gbNuevoProd.Controls.Add(this.btnEliminar);
@@ -336,17 +336,6 @@
             this.panel1.Size = new System.Drawing.Size(651, 35);
             this.panel1.TabIndex = 29;
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.dgvProductos);
-            this.panel3.Location = new System.Drawing.Point(307, 35);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(651, 416);
-            this.panel3.TabIndex = 30;
-            // 
             // btnRestaurar
             // 
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
@@ -362,6 +351,17 @@
             this.btnRestaurar.Text = "RESTAURAR";
             this.btnRestaurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRestaurar.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.dgvProductos);
+            this.panel3.Location = new System.Drawing.Point(307, 35);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(651, 416);
+            this.panel3.TabIndex = 30;
             // 
             // Productos
             // 

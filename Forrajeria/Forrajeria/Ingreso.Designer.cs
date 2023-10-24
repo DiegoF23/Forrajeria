@@ -54,7 +54,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(104)))));
+            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold);
             this.txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -65,7 +65,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(104)))));
+            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold);
             this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -97,7 +97,7 @@
             // 
             // btnAcceso
             // 
-            this.btnAcceso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(104)))));
+            this.btnAcceso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.btnAcceso.FlatAppearance.BorderSize = 0;
             this.btnAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcceso.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold);
@@ -127,7 +127,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.btnClose.BackColor = System.Drawing.Color.Firebrick;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(356, 397);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAcceso);

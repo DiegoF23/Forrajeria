@@ -307,12 +307,7 @@ namespace Forrajeria
             CantidadChange();
         }
 
-        private void btnAgregarCarro_Click(object sender, EventArgs e)
-        {
-            AgregarAlCarrito(idProd);
-
-            limpiarCampos();
-        }
+       
 
         private void dgvCarrito_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -344,23 +339,35 @@ namespace Forrajeria
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
-            EditarCarro();
-            limpiarCampos();
+                EditarCarro();
+                limpiarCampos();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             EliminarItemCarro();
             limpiarCampos();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             limpiarCampos();
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
+        private void btnAgregarCarro_Click_1(object sender, EventArgs e)
         {
+
+            AgregarAlCarrito(idProd);
+
+            limpiarCampos();
+        }
+
+        private void btnPagar_Click_1(object sender, EventArgs e)
+        {
+            PagarCarrito();
+        }
+
+        private void btnCancelarCarro_Click_1(object sender, EventArgs e){
             if (string.IsNullOrEmpty(txtNombreCliente.Text))
             {
                 System.Media.SystemSounds.Beep.Play();
@@ -380,7 +387,7 @@ namespace Forrajeria
         private void btnCancelarCarro_Click(object sender, EventArgs e)
         {
             limpiarCampos();
-            
+
             lblTotal.Text = "Cantidad Productos: 0";
             lblTotalCarrito.Text = "$0.00";
             foreach (DataRow row in Carro.Rows)
@@ -396,14 +403,16 @@ namespace Forrajeria
             MostrarProductos();
         }
 
+
+
         private void GenerarFactura()
         {
-           
+
             string cliente = nombre;
             string direccionCliente = direccion;
             string telefonoCliente = telefono;
 
-            int numeroFactura = objCarrito_CLN.ObtenerNumeroFactura(); 
+            int numeroFactura = objCarrito_CLN.ObtenerNumeroFactura();
 
             DataTable detallesFactura = new DataTable();
             detallesFactura.Columns.Add("Producto");

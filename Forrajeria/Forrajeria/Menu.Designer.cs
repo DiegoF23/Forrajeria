@@ -60,7 +60,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.panelMenu.Controls.Add(this.iconButton4);
             this.panelMenu.Controls.Add(this.btnVenta);
             this.panelMenu.Controls.Add(this.btnProducto);
@@ -189,7 +189,7 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.panelLogo.Controls.Add(this.panel1);
             this.panelLogo.Controls.Add(this.btnHome);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -219,7 +219,7 @@
             // 
             // pnlControles
             // 
-            this.pnlControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.pnlControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.pnlControles.Controls.Add(this.btnMinimizar);
             this.pnlControles.Controls.Add(this.btnMaximizar);
             this.pnlControles.Controls.Add(this.btnClose);
@@ -234,7 +234,7 @@
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.btnMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -252,7 +252,7 @@
             // 
             // btnMaximizar
             // 
-            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.btnMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMaximizar.FlatAppearance.BorderSize = 0;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -270,7 +270,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(32)))), ((int)(((byte)(67)))));
+            this.btnClose.BackColor = System.Drawing.Color.Firebrick;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -288,7 +288,7 @@
             // 
             // pnlBarraTitulo
             // 
-            this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(104)))));
+            this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(59)))));
             this.pnlBarraTitulo.Controls.Add(this.lblTituloFormularioHijo);
             this.pnlBarraTitulo.Controls.Add(this.iconCurrentChild);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -301,7 +301,7 @@
             // 
             this.lblTituloFormularioHijo.AutoSize = true;
             this.lblTituloFormularioHijo.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloFormularioHijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(180)))), ((int)(((byte)(187)))));
+            this.lblTituloFormularioHijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(171)))), ((int)(((byte)(154)))));
             this.lblTituloFormularioHijo.Location = new System.Drawing.Point(40, 6);
             this.lblTituloFormularioHijo.Name = "lblTituloFormularioHijo";
             this.lblTituloFormularioHijo.Size = new System.Drawing.Size(167, 23);
@@ -310,11 +310,11 @@
             // 
             // iconCurrentChild
             // 
-            this.iconCurrentChild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(104)))));
+            this.iconCurrentChild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(59)))));
             this.iconCurrentChild.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconCurrentChild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(180)))), ((int)(((byte)(187)))));
+            this.iconCurrentChild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(171)))), ((int)(((byte)(154)))));
             this.iconCurrentChild.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconCurrentChild.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(180)))), ((int)(((byte)(187)))));
+            this.iconCurrentChild.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(171)))), ((int)(((byte)(154)))));
             this.iconCurrentChild.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconCurrentChild.IconSize = 37;
             this.iconCurrentChild.Location = new System.Drawing.Point(0, 0);
