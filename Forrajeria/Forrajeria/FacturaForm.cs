@@ -75,7 +75,7 @@ namespace Forrajeria
             XTextFormatter tf = new XTextFormatter(gfx);
             int yPosition = 50;
 
-            // Agregar el contenido de la factura al PDF
+        
             tf.DrawString($"Factura #{numeroFactura}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
             yPosition += 20;
             tf.DrawString($"Cliente: {cliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
@@ -84,7 +84,7 @@ namespace Forrajeria
             yPosition += 20;
             tf.DrawString($"Teléfono: {telefonoCliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
 
-            // Dibujar los detalles de la factura desde la DataTable
+          
             yPosition += 20;
             foreach (DataRow row in detallesFactura.Rows)
             {
@@ -102,16 +102,13 @@ namespace Forrajeria
                 yPosition += 20;
             }
 
-            // Dibujar el importe total al final de la factura
             yPosition += 20;
-            CultureInfo culture = new CultureInfo("es-AR"); // Configura la cultura para pesos argentinos
-            string importeTotalFormatted = importeTotal.ToString("C", culture); // Formatea el importe total en pesos argentinos
+            CultureInfo culture = new CultureInfo("es-AR"); 
+            string importeTotalFormatted = importeTotal.ToString("C", culture); 
             tf.DrawString($"Importe Total: {importeTotalFormatted}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
 
-            // Guardar el documento PDF
             document.Save(pdfFileName);
 
-            // Abre el archivo PDF en el visor de PDF predeterminado
             System.Diagnostics.Process.Start(pdfFileName);
         }
     }
