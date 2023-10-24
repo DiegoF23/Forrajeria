@@ -184,7 +184,6 @@ namespace CapaAccesoDatos
         public int ObtenerNroFactura()
         {
             int ultimoID = 0;
-
             using (SqlConnection connection = objConexionCAD.abrirConexion())
             {
                 using (SqlCommand command = new SqlCommand("ObtenerUltimoIDVenta", connection))
