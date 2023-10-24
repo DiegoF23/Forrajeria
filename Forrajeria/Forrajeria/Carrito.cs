@@ -339,24 +339,28 @@ namespace Forrajeria
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
+            //actual
                 EditarCarro();
                 limpiarCampos();
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
+            //actual
             EliminarItemCarro();
             limpiarCampos();
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
+            //actual
             limpiarCampos();
 
         }
 
         private void btnAgregarCarro_Click_1(object sender, EventArgs e)
         {
+            //actual
 
             AgregarAlCarrito(idProd);
 
@@ -365,6 +369,7 @@ namespace Forrajeria
 
         private void btnPagar_Click_1(object sender, EventArgs e)
         {
+            //actual
             PagarCarrito();
         }
 
@@ -387,6 +392,7 @@ namespace Forrajeria
 
         private void btnCancelarCarro_Click(object sender, EventArgs e)
         {
+            //actual
             limpiarCampos();
 
             lblTotal.Text = "Cantidad Productos: 0";
