@@ -393,6 +393,7 @@ namespace Forrajeria
         private void btnCancelarCarro_Click(object sender, EventArgs e)
         {
             //actual
+
             limpiarCampos();
 
             lblTotal.Text = "Cantidad Productos: 0";
