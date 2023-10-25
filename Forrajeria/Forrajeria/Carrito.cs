@@ -1,13 +1,19 @@
 ﻿using CapaLogica;
+using PdfSharp.Drawing.Layout;
+using PdfSharp.Drawing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing.Layout;
 
 namespace Forrajeria
 {
@@ -252,7 +258,7 @@ namespace Forrajeria
                 objCarrito_CLN.insertDetallesVenta(VentaID,(int)row["Codigo"],(int)row["Cantidad"], (decimal)row["Precio"]);
             }
 
-            MessageBox.Show("Cliente,Venta y detalles insertados");
+            //MessageBox.Show("Cliente,Venta y detalles insertados");
             GenerarFactura(VentaID);
             limpiarCampos();
             MostrarProductos();
@@ -388,7 +394,14 @@ namespace Forrajeria
             else
             {
                 toolTip1.Hide(txtNombreCliente);
-                PagarCarrito();
+                System.Media.SystemSounds.Beep.Play();
+                DialogResult result = MessageBox.Show("¿Finalizar la Venta?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    PagarCarrito();
+                }
+               
+                    
 
             }
 
@@ -422,10 +435,64 @@ namespace Forrajeria
                 detallesFactura.Rows.Add(producto, cantidad, precioUnitario, subtotal);
                 importeTotal += subtotal;
             }
+            //generar aqui metodo para imprimir
+            Imprimir(numeroFactura,cliente,direccionCliente,telefonoCliente,detallesFactura,importeTotal);
+            //FacturaForm facturaForm = new FacturaForm(numeroFactura, cliente, direccionCliente, telefonoCliente, detallesFactura, importeTotal);
+            //facturaForm.ShowDialog();
 
-            FacturaForm facturaForm = new FacturaForm(numeroFactura, cliente, direccionCliente, telefonoCliente, detallesFactura, importeTotal);
-            facturaForm.ShowDialog();
+        }
 
+
+        private void Imprimir(int numeroFactura, string cliente,string direccionCliente,string telefonoCliente,DataTable detallesFactura,decimal importeTotal)
+        {
+            string pdfFileName = "factura.pdf"; // Nombre del archivo PDF
+
+            PdfDocument document = new PdfDocument();
+            document.Info.Title = "Factura";
+
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XFont font = new XFont("Arial", 12);
+
+            XTextFormatter tf = new XTextFormatter(gfx);
+            int yPosition = 50;
+
+
+            tf.DrawString($"Factura #{numeroFactura}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+            yPosition += 17;
+            tf.DrawString($"Cliente: {cliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+            yPosition += 13;
+            tf.DrawString($"Dirección: {direccionCliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+            yPosition += 13;
+            tf.DrawString($"Teléfono: {telefonoCliente}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+            yPosition += 20;
+            tf.DrawString($"Productos: ", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+
+            yPosition += 17;
+            foreach (DataRow row in detallesFactura.Rows)
+            {
+                string producto = row["Producto"].ToString();
+                string cantidad = row["Cantidad"].ToString();
+                string precioUnitario = row["Precio unitario"].ToString();
+                string subtotal = row["Subtotal"].ToString();
+
+                tf.DrawString(producto, font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+                yPosition += 13;
+                tf.DrawString(cantidad, font, XBrushes.Black, new XRect(250, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+                tf.DrawString(precioUnitario, font, XBrushes.Black, new XRect(350, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+                tf.DrawString(subtotal, font, XBrushes.Black, new XRect(450, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+
+                yPosition += 15;
+            }
+
+            yPosition += 20;
+            CultureInfo culture = new CultureInfo("es-AR");
+            string importeTotalFormatted = importeTotal.ToString("C", culture);
+            tf.DrawString($"Importe Total: {importeTotalFormatted}", font, XBrushes.Black, new XRect(50, yPosition, page.Width, page.Height), XStringFormats.TopLeft);
+
+            document.Save(pdfFileName);
+
+            System.Diagnostics.Process.Start(pdfFileName);
         }
 
         private void btnCancelarCarro_Click_1(object sender, EventArgs e)
