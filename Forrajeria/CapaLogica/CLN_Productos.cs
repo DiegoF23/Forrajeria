@@ -71,5 +71,9 @@ namespace CapaLogica
 
         }
 
+        public void insertarCompra(string fecha, int idProv, double importe)
+        {
+            objProductosCAD.insertCompra(fecha, idProv, importe);
+        }
     }
 }

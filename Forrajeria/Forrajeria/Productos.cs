@@ -25,6 +25,8 @@ namespace Forrajeria
         private int idProd;
         private int indice;
         private string buscar;
+        private double importe;
+        private string fecha;
 
         public Productos()
         {
@@ -48,10 +50,13 @@ namespace Forrajeria
             txtDescripcion.Text = "";
             txtProveedor.Text = "1";
             gbNuevoProd.Text= "Nuevo Producto";
-            btnAplicar.Visible= false;
-            btnEliminar.Visible= false;
-            btnAgregar.Visible= true;
+            //btnAplicar.Visible= true;
+            //btnEliminar.Visible= true;
+            //btnAgregar.Visible= false;
             txtBuscar.Text = "";
+            txtImporte.Text = "";
+            rbCompra.Checked = false;
+            rbModificar.Checked = true;
             CargarCombo();
 
         }
@@ -100,7 +105,9 @@ namespace Forrajeria
         private void AgregarProducto()
         {
             obtenerProducto();
+            obtenerCompra();
             objProductos_CLN.AgregarProductos(nom,precio,descripcion,stock,idProv);
+            objProductos_CLN.insertarCompra(fecha, idProv, importe);
             MessageBox.Show("Productos agregados correctamente");
             MostrarProductos();
             limpiarCampos();
@@ -133,6 +140,11 @@ namespace Forrajeria
         {
             obtenerProducto();
             objProductos_CLN.EditarProductos(idProd,nom, precio, descripcion, stock, idProv);
+            if (rbCompra.Checked==true)
+            {
+                obtenerCompra();
+                objProductos_CLN.insertarCompra(fecha, idProv, importe);
+            }
             MessageBox.Show("Se Guardo correctamente los cambios");
             MostrarProductos();
             limpiarCampos();
@@ -160,6 +172,11 @@ namespace Forrajeria
             txtProveedor.DisplayMember = "Nombre";
             txtProveedor.ValueMember = "ProveedorID"; 
 
+        }
+        public void obtenerCompra()
+        {
+            fecha = Convert.ToString(dtFecha.Value);
+            importe= Convert.ToDouble(txtImporte.Text);
         }
 
 
@@ -221,6 +238,47 @@ namespace Forrajeria
             limpiarCampos();
         }
 
-        
+        private void rbCompra_CheckedChanged(object sender, EventArgs e)
+        {
+            lblDate.Visible = true;
+            lblImporte.Visible = true;
+            btnAgregar.Visible = true; 
+            txtImporte.Visible = true;
+            dtFecha.Visible = true; 
+            txtStock.Enabled = true;
+
+        }
+
+        private void rbModificar_CheckedChanged(object sender, EventArgs e)
+        {
+            lblDate.Visible = false;
+            lblImporte.Visible = false; 
+            btnAgregar.Visible = false; 
+            txtImporte.Visible = false; 
+            dtFecha.Visible=false;
+            txtStock.Enabled = false;
+        }
+
+        private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si el carácter presionado no es un número, no es un punto y no es una coma, ni es la tecla de retroceso
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            // Expresión regular para permitir números y comas o puntos como separadores decimales
+            string pattern = @"^\d+([\.,]\d{0,2})?$";
+            Regex regex = new Regex(pattern);
+
+            string currentText = txtImporte.Text.Insert(txtImporte.SelectionStart, e.KeyChar.ToString());
+
+            // Valida el carácter ingresado con la expresión regular
+            if (!regex.IsMatch(currentText))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

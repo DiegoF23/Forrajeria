@@ -28,15 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.gbNuevoProd = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnAplicar = new FontAwesome.Sharp.IconButton();
             this.txtProveedor = new System.Windows.Forms.ComboBox();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
@@ -51,8 +47,18 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRestaurar = new FontAwesome.Sharp.IconButton();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnAplicar = new FontAwesome.Sharp.IconButton();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblImporte = new System.Windows.Forms.Label();
+            this.txtImporte = new System.Windows.Forms.TextBox();
+            this.rbCompra = new System.Windows.Forms.RadioButton();
+            this.rbModificar = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbNuevoProd.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,47 +70,53 @@
             // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Violet;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Thistle;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Violet;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Thistle;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Thistle;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Thistle;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvProductos.Location = new System.Drawing.Point(0, 0);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
-            this.dgvProductos.Size = new System.Drawing.Size(651, 416);
+            this.dgvProductos.Size = new System.Drawing.Size(651, 564);
             this.dgvProductos.TabIndex = 1;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // gbNuevoProd
             // 
             this.gbNuevoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.gbNuevoProd.Controls.Add(this.rbModificar);
+            this.gbNuevoProd.Controls.Add(this.rbCompra);
+            this.gbNuevoProd.Controls.Add(this.txtImporte);
+            this.gbNuevoProd.Controls.Add(this.lblImporte);
+            this.gbNuevoProd.Controls.Add(this.lblDate);
+            this.gbNuevoProd.Controls.Add(this.dtFecha);
             this.gbNuevoProd.Controls.Add(this.btnCancelar);
             this.gbNuevoProd.Controls.Add(this.btnAgregar);
             this.gbNuevoProd.Controls.Add(this.btnEliminar);
@@ -126,92 +138,10 @@
             this.gbNuevoProd.Location = new System.Drawing.Point(0, 0);
             this.gbNuevoProd.Name = "gbNuevoProd";
             this.gbNuevoProd.Padding = new System.Windows.Forms.Padding(2);
-            this.gbNuevoProd.Size = new System.Drawing.Size(307, 451);
+            this.gbNuevoProd.Size = new System.Drawing.Size(307, 599);
             this.gbNuevoProd.TabIndex = 12;
             this.gbNuevoProd.TabStop = false;
             this.gbNuevoProd.Text = "Nuevo Producto";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 20;
-            this.btnCancelar.Location = new System.Drawing.Point(198, 375);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(96, 42);
-            this.btnCancelar.TabIndex = 27;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.CheckDouble;
-            this.btnAgregar.IconColor = System.Drawing.Color.Black;
-            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregar.IconSize = 20;
-            this.btnAgregar.Location = new System.Drawing.Point(102, 376);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(90, 42);
-            this.btnAgregar.TabIndex = 27;
-            this.btnAgregar.Text = "AGREGAR";
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminar.IconColor = System.Drawing.Color.Black;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 20;
-            this.btnEliminar.Location = new System.Drawing.Point(104, 375);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 42);
-            this.btnEliminar.TabIndex = 27;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
-            // 
-            // btnAplicar
-            // 
-            this.btnAplicar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAplicar.FlatAppearance.BorderSize = 0;
-            this.btnAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAplicar.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAplicar.ForeColor = System.Drawing.Color.Black;
-            this.btnAplicar.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnAplicar.IconColor = System.Drawing.Color.Black;
-            this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAplicar.IconSize = 20;
-            this.btnAplicar.Location = new System.Drawing.Point(12, 375);
-            this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(86, 42);
-            this.btnAplicar.TabIndex = 27;
-            this.btnAplicar.Text = "APLICAR";
-            this.btnAplicar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAplicar.UseVisualStyleBackColor = false;
-            this.btnAplicar.Visible = false;
-            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // txtProveedor
             // 
@@ -233,6 +163,7 @@
             // 
             // txtStock
             // 
+            this.txtStock.Enabled = false;
             this.txtStock.Location = new System.Drawing.Point(15, 253);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(257, 33);
@@ -303,7 +234,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(307, 451);
+            this.panel2.Size = new System.Drawing.Size(307, 599);
             this.panel2.TabIndex = 28;
             // 
             // txtBuscar
@@ -336,6 +267,17 @@
             this.panel1.Size = new System.Drawing.Size(651, 35);
             this.panel1.TabIndex = 29;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.dgvProductos);
+            this.panel3.Location = new System.Drawing.Point(307, 35);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(651, 564);
+            this.panel3.TabIndex = 30;
+            // 
             // btnRestaurar
             // 
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
@@ -352,23 +294,156 @@
             this.btnRestaurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRestaurar.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // btnCancelar
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.dgvProductos);
-            this.panel3.Location = new System.Drawing.Point(307, 35);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(651, 416);
-            this.panel3.TabIndex = 30;
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 20;
+            this.btnCancelar.Location = new System.Drawing.Point(198, 375);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(96, 42);
+            this.btnCancelar.TabIndex = 27;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.CheckDouble;
+            this.btnAgregar.IconColor = System.Drawing.Color.Black;
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 20;
+            this.btnAgregar.Location = new System.Drawing.Point(102, 376);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(90, 42);
+            this.btnAgregar.TabIndex = 27;
+            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Visible = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnEliminar.IconColor = System.Drawing.Color.Black;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 20;
+            this.btnEliminar.Location = new System.Drawing.Point(104, 375);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(88, 42);
+            this.btnEliminar.TabIndex = 27;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
+            // 
+            // btnAplicar
+            // 
+            this.btnAplicar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAplicar.FlatAppearance.BorderSize = 0;
+            this.btnAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAplicar.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAplicar.ForeColor = System.Drawing.Color.Black;
+            this.btnAplicar.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnAplicar.IconColor = System.Drawing.Color.Black;
+            this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAplicar.IconSize = 20;
+            this.btnAplicar.Location = new System.Drawing.Point(12, 375);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(86, 42);
+            this.btnAplicar.TabIndex = 27;
+            this.btnAplicar.Text = "APLICAR";
+            this.btnAplicar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAplicar.UseVisualStyleBackColor = false;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha.Location = new System.Drawing.Point(130, 493);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(157, 33);
+            this.dtFecha.TabIndex = 28;
+            this.dtFecha.Visible = false;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(13, 500);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(64, 26);
+            this.lblDate.TabIndex = 29;
+            this.lblDate.Text = "Fecha";
+            this.lblDate.Visible = false;
+            // 
+            // lblImporte
+            // 
+            this.lblImporte.AutoSize = true;
+            this.lblImporte.Location = new System.Drawing.Point(10, 553);
+            this.lblImporte.Name = "lblImporte";
+            this.lblImporte.Size = new System.Drawing.Size(86, 26);
+            this.lblImporte.TabIndex = 30;
+            this.lblImporte.Text = "Importe";
+            this.lblImporte.Visible = false;
+            // 
+            // txtImporte
+            // 
+            this.txtImporte.Location = new System.Drawing.Point(130, 546);
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.Size = new System.Drawing.Size(142, 33);
+            this.txtImporte.TabIndex = 31;
+            this.txtImporte.Visible = false;
+            this.txtImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImporte_KeyPress);
+            // 
+            // rbCompra
+            // 
+            this.rbCompra.AutoSize = true;
+            this.rbCompra.Location = new System.Drawing.Point(18, 447);
+            this.rbCompra.Name = "rbCompra";
+            this.rbCompra.Size = new System.Drawing.Size(101, 30);
+            this.rbCompra.TabIndex = 32;
+            this.rbCompra.Text = "Compra";
+            this.rbCompra.UseVisualStyleBackColor = true;
+            this.rbCompra.CheckedChanged += new System.EventHandler(this.rbCompra_CheckedChanged);
+            // 
+            // rbModificar
+            // 
+            this.rbModificar.AutoSize = true;
+            this.rbModificar.Checked = true;
+            this.rbModificar.Location = new System.Drawing.Point(139, 447);
+            this.rbModificar.Name = "rbModificar";
+            this.rbModificar.Size = new System.Drawing.Size(146, 30);
+            this.rbModificar.TabIndex = 33;
+            this.rbModificar.TabStop = true;
+            this.rbModificar.Text = "Modificacion";
+            this.rbModificar.UseVisualStyleBackColor = true;
+            this.rbModificar.CheckedChanged += new System.EventHandler(this.rbModificar_CheckedChanged);
             // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(958, 451);
+            this.ClientSize = new System.Drawing.Size(958, 599);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -409,5 +484,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnRestaurar;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.DateTimePicker dtFecha;
+        private System.Windows.Forms.Label lblImporte;
+        private System.Windows.Forms.TextBox txtImporte;
+        private System.Windows.Forms.RadioButton rbModificar;
+        private System.Windows.Forms.RadioButton rbCompra;
     }
 }

@@ -239,7 +239,7 @@ CREATE PROCEDURE InsertarVentaYObtenerID
 (
     @fecha NVARCHAR(255),
     @ClienteID int,
-    @ImporteTotal
+    @ImporteTotal decimal(10,2)
 )
 AS
 BEGIN
@@ -309,6 +309,20 @@ BEGIN
     DELETE FROM Clientes
     WHERE ClienteID = @ClienteID;
 END;
+
+-- compras
+Create Procedure InsertarCompra
+(
+    @fecha NVARCHAR(255),
+    @ProveedorID int,
+    @ImporteTotal decimal(10,2)
+)
+AS
+BEGIN
+    -- Insertar datos en la tabla
+    INSERT INTO Compras(Fecha, ProveedorID, ImporteTotal)
+	  VALUES (@fecha, @ProveedorID, @ImporteTotal);
+END
 
 --select * from Clientes;
 --select * from Ventas;
