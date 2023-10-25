@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iText.Layout.Element;
+using Microsoft.Extensions.Logging;
 
 namespace CapaAccesoDatos
 {
@@ -12,10 +14,13 @@ namespace CapaAccesoDatos
     {
         private Conexion_DB objConexionCAD;
         private SqlDataReader leerTabla;
+        private SqlDataReader leerTabla2;
         private DataTable Tabla;
         private DataTable Tabla2;
+        private DataTable Tabla3;
         private DataTable Combo1;
         private SqlCommand Comando;
+        int CompraID;
 
         public CAD_Productos()
         {
@@ -24,6 +29,7 @@ namespace CapaAccesoDatos
             Tabla2 = new DataTable();
             Combo1 = new DataTable();
             Comando = new SqlCommand();
+            Tabla3 = new DataTable();   
 
         }
 
@@ -117,6 +123,19 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return Combo1;
 
+        }
+
+        public void insertCompra(string Fecha, int IdProv, decimal Total)
+        {
+            Comando.Connection = objConexionCAD.abrirConexion();
+            Comando.CommandText = "InsertarCompra";
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.Clear();
+            Comando.Parameters.AddWithValue("@fecha", Fecha);
+            Comando.Parameters.AddWithValue("@ProveedorID", IdProv);
+            Comando.Parameters.AddWithValue("@ImporteTotal", Total);
+            Comando.ExecuteNonQuery();
+            objConexionCAD.cerrarConexion();
         }
     }
 }

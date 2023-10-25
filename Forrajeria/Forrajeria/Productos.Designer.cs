@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.gbNuevoProd = new System.Windows.Forms.GroupBox();
+            this.rbModificar = new System.Windows.Forms.RadioButton();
+            this.rbCompra = new System.Windows.Forms.RadioButton();
+            this.txtImporte = new System.Windows.Forms.TextBox();
+            this.lblImporte = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
@@ -64,47 +70,53 @@
             // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Violet;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Thistle;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Thistle;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvProductos.Location = new System.Drawing.Point(0, 0);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
-            this.dgvProductos.Size = new System.Drawing.Size(651, 416);
+            this.dgvProductos.Size = new System.Drawing.Size(580, 468);
             this.dgvProductos.TabIndex = 1;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // gbNuevoProd
             // 
-            this.gbNuevoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.gbNuevoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(61)))), ((int)(((byte)(78)))));
+            this.gbNuevoProd.Controls.Add(this.rbModificar);
+            this.gbNuevoProd.Controls.Add(this.rbCompra);
+            this.gbNuevoProd.Controls.Add(this.txtImporte);
+            this.gbNuevoProd.Controls.Add(this.lblImporte);
+            this.gbNuevoProd.Controls.Add(this.lblDate);
+            this.gbNuevoProd.Controls.Add(this.dtFecha);
             this.gbNuevoProd.Controls.Add(this.btnCancelar);
             this.gbNuevoProd.Controls.Add(this.btnAgregar);
             this.gbNuevoProd.Controls.Add(this.btnEliminar);
@@ -126,10 +138,73 @@
             this.gbNuevoProd.Location = new System.Drawing.Point(0, 0);
             this.gbNuevoProd.Name = "gbNuevoProd";
             this.gbNuevoProd.Padding = new System.Windows.Forms.Padding(2);
-            this.gbNuevoProd.Size = new System.Drawing.Size(307, 451);
+            this.gbNuevoProd.Size = new System.Drawing.Size(307, 503);
             this.gbNuevoProd.TabIndex = 12;
             this.gbNuevoProd.TabStop = false;
             this.gbNuevoProd.Text = "Nuevo Producto";
+            // 
+            // rbModificar
+            // 
+            this.rbModificar.AutoSize = true;
+            this.rbModificar.Checked = true;
+            this.rbModificar.Location = new System.Drawing.Point(122, 21);
+            this.rbModificar.Name = "rbModificar";
+            this.rbModificar.Size = new System.Drawing.Size(146, 30);
+            this.rbModificar.TabIndex = 33;
+            this.rbModificar.TabStop = true;
+            this.rbModificar.Text = "Modificacion";
+            this.rbModificar.UseVisualStyleBackColor = true;
+            this.rbModificar.CheckedChanged += new System.EventHandler(this.rbModificar_CheckedChanged);
+            // 
+            // rbCompra
+            // 
+            this.rbCompra.AutoSize = true;
+            this.rbCompra.Location = new System.Drawing.Point(15, 21);
+            this.rbCompra.Name = "rbCompra";
+            this.rbCompra.Size = new System.Drawing.Size(101, 30);
+            this.rbCompra.TabIndex = 32;
+            this.rbCompra.Text = "Compra";
+            this.rbCompra.UseVisualStyleBackColor = true;
+            this.rbCompra.CheckedChanged += new System.EventHandler(this.rbCompra_CheckedChanged);
+            // 
+            // txtImporte
+            // 
+            this.txtImporte.Location = new System.Drawing.Point(101, 399);
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.Size = new System.Drawing.Size(142, 33);
+            this.txtImporte.TabIndex = 31;
+            this.txtImporte.Visible = false;
+            this.txtImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImporte_KeyPress);
+            // 
+            // lblImporte
+            // 
+            this.lblImporte.AutoSize = true;
+            this.lblImporte.Location = new System.Drawing.Point(9, 406);
+            this.lblImporte.Name = "lblImporte";
+            this.lblImporte.Size = new System.Drawing.Size(86, 26);
+            this.lblImporte.TabIndex = 30;
+            this.lblImporte.Text = "Importe";
+            this.lblImporte.Visible = false;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(9, 355);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(64, 26);
+            this.lblDate.TabIndex = 29;
+            this.lblDate.Text = "Fecha";
+            this.lblDate.Visible = false;
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha.Location = new System.Drawing.Point(86, 348);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(157, 33);
+            this.dtFecha.TabIndex = 28;
+            this.dtFecha.Visible = false;
             // 
             // btnCancelar
             // 
@@ -142,7 +217,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 20;
-            this.btnCancelar.Location = new System.Drawing.Point(198, 375);
+            this.btnCancelar.Location = new System.Drawing.Point(198, 448);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(96, 42);
             this.btnCancelar.TabIndex = 27;
@@ -162,13 +237,14 @@
             this.btnAgregar.IconColor = System.Drawing.Color.Black;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 20;
-            this.btnAgregar.Location = new System.Drawing.Point(102, 376);
+            this.btnAgregar.Location = new System.Drawing.Point(102, 449);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(90, 42);
             this.btnAgregar.TabIndex = 27;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Visible = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // btnEliminar
@@ -182,7 +258,7 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 20;
-            this.btnEliminar.Location = new System.Drawing.Point(104, 375);
+            this.btnEliminar.Location = new System.Drawing.Point(104, 448);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 42);
             this.btnEliminar.TabIndex = 27;
@@ -203,7 +279,7 @@
             this.btnAplicar.IconColor = System.Drawing.Color.Black;
             this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAplicar.IconSize = 20;
-            this.btnAplicar.Location = new System.Drawing.Point(12, 375);
+            this.btnAplicar.Location = new System.Drawing.Point(12, 448);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(86, 42);
             this.btnAplicar.TabIndex = 27;
@@ -216,7 +292,7 @@
             // txtProveedor
             // 
             this.txtProveedor.FormattingEnabled = true;
-            this.txtProveedor.Location = new System.Drawing.Point(15, 323);
+            this.txtProveedor.Location = new System.Drawing.Point(15, 307);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Size = new System.Drawing.Size(257, 34);
             this.txtProveedor.TabIndex = 26;
@@ -225,7 +301,7 @@
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Location = new System.Drawing.Point(9, 293);
+            this.lblProveedor.Location = new System.Drawing.Point(9, 284);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(113, 26);
             this.lblProveedor.TabIndex = 20;
@@ -233,7 +309,8 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(15, 253);
+            this.txtStock.Enabled = false;
+            this.txtStock.Location = new System.Drawing.Point(15, 249);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(257, 33);
             this.txtStock.TabIndex = 19;
@@ -241,7 +318,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(9, 223);
+            this.lblStock.Location = new System.Drawing.Point(9, 227);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(68, 26);
             this.lblStock.TabIndex = 18;
@@ -249,7 +326,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(15, 188);
+            this.txtPrecio.Location = new System.Drawing.Point(15, 192);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(257, 33);
             this.txtPrecio.TabIndex = 17;
@@ -257,7 +334,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(9, 158);
+            this.lblPrecio.Location = new System.Drawing.Point(9, 169);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(74, 26);
             this.lblPrecio.TabIndex = 16;
@@ -265,7 +342,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(15, 123);
+            this.txtDescripcion.Location = new System.Drawing.Point(15, 134);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(257, 33);
             this.txtDescripcion.TabIndex = 15;
@@ -273,7 +350,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(9, 93);
+            this.lblDescripcion.Location = new System.Drawing.Point(9, 108);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(123, 26);
             this.lblDescripcion.TabIndex = 14;
@@ -282,7 +359,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(15, 58);
+            this.txtNombre.Location = new System.Drawing.Point(15, 74);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(257, 33);
             this.txtNombre.TabIndex = 13;
@@ -290,7 +367,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(9, 28);
+            this.lblNombre.Location = new System.Drawing.Point(9, 51);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(91, 26);
             this.lblNombre.TabIndex = 12;
@@ -303,7 +380,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(307, 451);
+            this.panel2.Size = new System.Drawing.Size(307, 503);
             this.panel2.TabIndex = 28;
             // 
             // txtBuscar
@@ -319,6 +396,7 @@
             // 
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblBuscar.Location = new System.Drawing.Point(15, 3);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(77, 26);
@@ -327,21 +405,23 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(61)))), ((int)(((byte)(78)))));
             this.panel1.Controls.Add(this.btnRestaurar);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.lblBuscar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(307, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(651, 35);
+            this.panel1.Size = new System.Drawing.Size(580, 35);
             this.panel1.TabIndex = 29;
             // 
             // btnRestaurar
             // 
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnRestaurar.IconChar = FontAwesome.Sharp.IconChar.Retweet;
-            this.btnRestaurar.IconColor = System.Drawing.Color.Black;
+            this.btnRestaurar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnRestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRestaurar.IconSize = 20;
             this.btnRestaurar.Location = new System.Drawing.Point(470, 5);
@@ -360,7 +440,7 @@
             this.panel3.Controls.Add(this.dgvProductos);
             this.panel3.Location = new System.Drawing.Point(307, 35);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(651, 416);
+            this.panel3.Size = new System.Drawing.Size(580, 468);
             this.panel3.TabIndex = 30;
             // 
             // Productos
@@ -368,7 +448,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(958, 451);
+            this.ClientSize = new System.Drawing.Size(887, 503);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -409,5 +489,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnRestaurar;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.DateTimePicker dtFecha;
+        private System.Windows.Forms.Label lblImporte;
+        private System.Windows.Forms.TextBox txtImporte;
+        private System.Windows.Forms.RadioButton rbModificar;
+        private System.Windows.Forms.RadioButton rbCompra;
     }
 }
