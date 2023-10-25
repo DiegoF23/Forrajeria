@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Forrajeria")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("LUCKY Forrajeria")]
+[assembly: AssemblyDescription("Aplicacion para el control y manejo de forrajeria LUCKY")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Forrajeria")]

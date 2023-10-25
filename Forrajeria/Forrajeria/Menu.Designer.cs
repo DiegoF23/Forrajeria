@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCliente = new FontAwesome.Sharp.IconButton();
             this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
@@ -47,7 +48,6 @@
             this.lblTituloFormularioHijo = new System.Windows.Forms.Label();
             this.iconCurrentChild = new FontAwesome.Sharp.IconPictureBox();
             this.panelEscritorio = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
@@ -364,25 +364,12 @@
             // panelEscritorio
             // 
             this.panelEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panelEscritorio.Controls.Add(this.iconButton1);
             this.panelEscritorio.Controls.Add(this.pictureBox1);
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritorio.Location = new System.Drawing.Point(194, 66);
             this.panelEscritorio.Name = "panelEscritorio";
             this.panelEscritorio.Size = new System.Drawing.Size(903, 542);
             this.panelEscritorio.TabIndex = 11;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(357, 210);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(8, 8);
-            this.iconButton1.TabIndex = 12;
-            this.iconButton1.Text = "iconButton1";
-            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -431,9 +418,10 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.btnProveedor);
             this.Controls.Add(this.btnProductos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "LUCKY Forrajeria";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
@@ -471,7 +459,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.PictureBox btnRestaurar;
         private FontAwesome.Sharp.IconButton btnCliente;
     }

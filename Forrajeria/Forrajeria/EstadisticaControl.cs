@@ -97,5 +97,10 @@ namespace Forrajeria
             chartGraficoBarras.Series[0].Name = "Total Vendido : $" + TotalVendido.ToString();
             
         }
+
+        private void lblProductos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
