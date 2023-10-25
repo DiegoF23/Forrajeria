@@ -115,6 +115,7 @@ namespace Forrajeria
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.colorRosa);
+            OpenChildForm(new EstadisticaControl());
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)

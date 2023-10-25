@@ -238,14 +238,13 @@ END;
 CREATE PROCEDURE InsertarVentaYObtenerID
 (
     @fecha NVARCHAR(255),
-    @ClienteID int,
-    @ImporteTotal
+    @ClienteID int
 )
 AS
 BEGIN
     -- Insertar datos en la tabla
-    INSERT INTO Ventas(Fecha, ClienteID, ImporteTotal)
-	  VALUES (@fecha, @ClienteID, @ImporteTotal);
+    INSERT INTO Ventas(Fecha, ClienteID)
+	  VALUES (@fecha, @ClienteID);
 
     -- Obtener el ID generado
     SELECT SCOPE_IDENTITY() AS VentaID;
@@ -263,64 +262,27 @@ begin
 	values(@VentaID,@ProductoID,@Cantidad,@PrecioUnitario);
 end;
 
-CREATE PROCEDURE InsertarCliente
-    @Nombre NVARCHAR(255),
-    @Direccion NVARCHAR(255),
-    @Telefono NVARCHAR(15)
-AS
-BEGIN
-    INSERT INTO Clientes (Nombre, Direccion, Telefono)
-    VALUES (@Nombre, @Direccion, @Telefono);
-END;
-READ (Obtener todos los clientes):
---
-CREATE PROCEDURE ObtenerClientes
-AS
-BEGIN
-    SELECT * FROM Clientes;
-END;
-READ (Obtener un cliente por ID):
---
-CREATE PROCEDURE ObtenerClientePorID
-    @ClienteID INT
-AS
-BEGIN
-    SELECT * FROM Clientes WHERE ClienteID = @ClienteID;
-END;
-UPDATE (Actualizar un cliente):
---
-CREATE PROCEDURE ActualizarCliente
-    @ClienteID INT,
-    @Nombre NVARCHAR(255),
-    @Direccion NVARCHAR(255),
-    @Telefono NVARCHAR(15)
-AS
-BEGIN
-    UPDATE Clientes
-    SET Nombre = @Nombre, Direccion = @Direccion, Telefono = @Telefono
-    WHERE ClienteID = @ClienteID;
-END;
-DELETE (Eliminar un cliente por ID):
---
-CREATE PROCEDURE EliminarCliente
-    @ClienteID INT
-AS
-BEGIN
-    DELETE FROM Clientes
-    WHERE ClienteID = @ClienteID;
-END;
-
 --select * from Clientes;
 --select * from Ventas;
 --select * from DetallesVentas;
 --select * from Productos;
 
-create procedure
-select ProductoID,Sum(Cantidad) as 'cantidades' from DetallesVentas
-group by ProductoID
-order by 'cantidades' asc ;
+create procedure ProductoCantidadesVendidas
+as
+begin
+select B.Nombre,Sum(A.Cantidad) as 'cantidades',(Sum(A.Cantidad * A.PrecioUnitario)) as 'Total Generado' from DetallesVentas as A
+inner join Productos as B 
+on A.ProductoID = B.ProductoID
+where A.ProductoID > 99
+group by B.Nombre
+order by 'cantidades' desc ;
+end;
 
-
+create procedure ProductosTotalesVendidos
+as
+begin
 select ProductoID ,(Sum(Cantidad * PrecioUnitario)) as 'Total Generado' from DetallesVentas
 where ProductoID > 99
-group by ProductoID;
+group by ProductoID
+order by 'Total Generado' desc; 
+end;

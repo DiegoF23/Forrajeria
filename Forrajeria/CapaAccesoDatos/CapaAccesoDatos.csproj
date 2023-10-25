@@ -122,6 +122,7 @@
   <ItemGroup>
     <Compile Include="CAD_Carrito.cs" />
     <Compile Include="CAD_Clientes.cs" />
+    <Compile Include="CAD_Estadistica.cs" />
     <Compile Include="CAD_Login.cs" />
     <Compile Include="CAD_Productos.cs" />
     <Compile Include="CAD_Proveedor.cs" />
