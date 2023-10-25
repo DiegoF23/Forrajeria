@@ -125,7 +125,7 @@ namespace CapaAccesoDatos
 
         }
 
-        public void insertCompra(string Fecha, int IdProv, double Total)
+        public void insertCompra(string Fecha, int IdProv, decimal Total)
         {
             Comando.Connection = objConexionCAD.abrirConexion();
             Comando.CommandText = "InsertarCompra";

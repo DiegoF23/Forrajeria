@@ -25,7 +25,7 @@ namespace Forrajeria
         private int idProd;
         private int indice;
         private string buscar;
-        private double importe;
+        private decimal importe;
         private string fecha;
 
         public Productos()
@@ -176,7 +176,7 @@ namespace Forrajeria
         public void obtenerCompra()
         {
             fecha = Convert.ToString(dtFecha.Value);
-            importe= Convert.ToDouble(txtImporte.Text);
+            importe= Convert.ToDecimal(txtImporte.Text);
         }
 
 
@@ -246,6 +246,8 @@ namespace Forrajeria
             txtImporte.Visible = true;
             dtFecha.Visible = true; 
             txtStock.Enabled = true;
+            btnEliminar.Visible = false;
+            btnAplicar.Visible = false; 
 
         }
 
@@ -279,6 +281,11 @@ namespace Forrajeria
             {
                 e.Handled = true;
             }
+        }
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
