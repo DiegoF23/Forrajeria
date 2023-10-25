@@ -14,6 +14,9 @@ using System.Windows.Forms;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing.Layout;
+using Forrajeria.Properties;
+using System.Windows.Media;
+using System.Media;
 
 namespace Forrajeria
 {
@@ -36,12 +39,16 @@ namespace Forrajeria
         int stock;
         int stockTotal;
         int stockeditar;
+        private MediaPlayer mediaPlayer;
+
 
 
         public Carrito()
         {
             InitializeComponent();
             objCarrito_CLN = new CLN_Carrito();
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri($"pack://application:,,,/;component/Resources/cajaRegistradora.wav"));
             Tabla = new DataTable();
             Tabla2 = new DataTable();
             Carro = new DataTable();
@@ -398,6 +405,7 @@ namespace Forrajeria
                 DialogResult result = MessageBox.Show("¿Finalizar la Venta?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    mediaPlayer.Play();
                     PagarCarrito();
                 }
                

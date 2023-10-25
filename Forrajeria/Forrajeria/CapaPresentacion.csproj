@@ -217,7 +217,7 @@
       <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -260,6 +260,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\restaurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaRegistradora.mp3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaRegistradora.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cajaRegistradora.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

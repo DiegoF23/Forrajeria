@@ -57,7 +57,11 @@ namespace Forrajeria
                 this.Hide();
                 //MessageBox.Show("Bienvenido " + nameUser);
             }
-            else MessageBox.Show("Usuario o contraseña incorrecta");
+            else
+            {
+                System.Media.SystemSounds.Beep.Play();
+                MessageBox.Show("Usuario o contraseña incorrecta"); 
+            }
             
 
         }
@@ -90,6 +94,20 @@ namespace Forrajeria
             user = txtUser.Text;
             pass = txtPass.Text;
             ObtenerDatos(user, pass);
+        }
+
+        private void btnMostrarContraseña_Click(object sender, EventArgs e)
+        {
+            btnMostrarContraseña.Visible = false;
+            btnOcultarContraseña.Visible = true;
+            txtPass.UseSystemPasswordChar = false;
+        }
+
+        private void btnOcultarContraseña_Click(object sender, EventArgs e)
+        {
+            btnMostrarContraseña.Visible = true;
+            btnOcultarContraseña.Visible = false;
+            txtPass.UseSystemPasswordChar = true;
         }
     }
 }

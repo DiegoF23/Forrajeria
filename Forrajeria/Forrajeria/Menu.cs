@@ -197,6 +197,7 @@ namespace Forrajeria
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             MessageBoxButtons botones = MessageBoxButtons.YesNo;
+            System.Media.SystemSounds.Beep.Play();
             DialogResult dr = MessageBox.Show("Desea cerrar sesión?", "Cerrar sesión", botones);
             if (dr == DialogResult.Yes) 
             {
