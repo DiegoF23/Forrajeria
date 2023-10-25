@@ -76,25 +76,7 @@ namespace Forrajeria
 
         }
 
-        private void btnAct_Click(object sender, EventArgs e)
-        {
-            ActualizarCliente();
-        }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            EliminarCliente();
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            agregarCliente();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-        }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -110,6 +92,31 @@ namespace Forrajeria
                 txtDireccion.Text = Convert.ToString(dgvClientes.Rows[indice].Cells[2].Value);
                 txtTelefono.Text = Convert.ToString(dgvClientes.Rows[indice].Cells[3].Value);
             }
+        }
+
+        private void lblTel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            EliminarCliente();
+        }
+
+        private void btnAct_Click_1(object sender, EventArgs e)
+        {
+            ActualizarCliente();
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            agregarCliente();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            limpiarCampos();
         }
     }
 }

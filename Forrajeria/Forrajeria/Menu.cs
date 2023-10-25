@@ -133,7 +133,15 @@ namespace Forrajeria
         {
             ActivateButton(sender, RGBColors.colorRosa);
             OpenChildForm(new Carrito());
+
         }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.colorRosa);
+            OpenChildForm(new Clientes());
+        }
+
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -215,5 +223,7 @@ namespace Forrajeria
             btnMaximizar.Visible = true;
 
         }
+
+        
     }
 }

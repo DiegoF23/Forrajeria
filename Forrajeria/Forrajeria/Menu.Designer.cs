@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnCliente = new FontAwesome.Sharp.IconButton();
             this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.btnVenta = new FontAwesome.Sharp.IconButton();
             this.btnProducto = new FontAwesome.Sharp.IconButton();
@@ -65,6 +66,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.panelMenu.Controls.Add(this.btnCliente);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.btnVenta);
             this.panelMenu.Controls.Add(this.btnProducto);
@@ -76,6 +78,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(194, 608);
             this.panelMenu.TabIndex = 5;
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCliente.FlatAppearance.BorderSize = 0;
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnCliente.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCliente.IconSize = 40;
+            this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCliente.Location = new System.Drawing.Point(0, 348);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnCliente.Size = new System.Drawing.Size(194, 54);
+            this.btnCliente.TabIndex = 11;
+            this.btnCliente.Text = "CLIENTE";
+            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // btnCerrarSesion
             // 
@@ -448,5 +473,6 @@
         private System.Windows.Forms.PictureBox btnMaximizar;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.PictureBox btnRestaurar;
+        private FontAwesome.Sharp.IconButton btnCliente;
     }
 }
