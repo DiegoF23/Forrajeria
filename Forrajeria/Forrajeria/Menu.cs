@@ -45,7 +45,7 @@ namespace Forrajeria
                 //Button
                 currentBtn = (IconButton)senderBtn;
                 ///////////////
-                currentBtn.BackColor = Color.FromArgb(37,79, 101);
+                currentBtn.BackColor = Color.FromArgb(29, 61, 78);
                 ///////////////
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -104,9 +104,9 @@ namespace Forrajeria
         {
             DisableButton();
             leftBorderBtn.Visible = false;
-            iconCurrentChild.IconChar = currentBtn.IconChar;
-            iconCurrentChild.IconColor = Color.FromArgb(235, 240, 240);
-            lblTituloFormularioHijo.Text = "Home";
+            iconCurrentChild.IconChar = IconChar.House;
+            iconCurrentChild.IconColor = Color.FromArgb(231, 171, 154);
+            lblTituloFormularioHijo.Text = "PAGINA PRINCIPAL";
         }
 
 
@@ -137,7 +137,15 @@ namespace Forrajeria
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            else 
+            {
+                MessageBox.Show("No hay ventanas para cerrar");
+            }
+            
             Reset();
         }
 
@@ -170,17 +178,42 @@ namespace Forrajeria
             mainProveedor.ShowDialog();
         }
 
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                WindowState = FormWindowState.Maximized;
-            else
-                WindowState = FormWindowState.Normal;
-        }
+        
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons botones = MessageBoxButtons.YesNo;
+            DialogResult dr = MessageBox.Show("Desea cerrar sesión?", "Cerrar sesión", botones);
+            if (dr == DialogResult.Yes) 
+            {
+                this.Close();
+                Ingreso ingreso = new Ingreso();
+                ingreso.Show();
+            }
+        }
+
+
+     
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+           
+            btnMaximizar.Visible = false;
+            btnRestaurar.Visible = true;
+        }
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
+        {
+          
+            WindowState = FormWindowState.Normal;
+            btnRestaurar.Visible = false;
+            btnMaximizar.Visible = true;
+
         }
     }
 }
