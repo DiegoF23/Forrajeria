@@ -116,6 +116,7 @@ namespace Forrajeria
         {
             ActivateButton(sender, RGBColors.colorRosa);
             OpenChildForm(new EstadisticaControl());
+            lblTituloFormularioHijo.Text = "ESTADISTICAS / CONTROL";
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
