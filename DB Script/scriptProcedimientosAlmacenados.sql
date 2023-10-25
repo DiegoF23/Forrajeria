@@ -265,3 +265,14 @@ end;
 --select * from Clientes;
 --select * from Ventas;
 --select * from DetallesVentas;
+--select * from Productos;
+
+create procedure
+select ProductoID,Sum(Cantidad) as 'cantidades' from DetallesVentas
+group by ProductoID
+order by 'cantidades' asc ;
+
+
+select ProductoID ,(Sum(Cantidad * PrecioUnitario)) as 'Total Generado' from DetallesVentas
+where ProductoID > 99
+group by ProductoID;

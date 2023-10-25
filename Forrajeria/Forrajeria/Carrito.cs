@@ -184,35 +184,42 @@ namespace Forrajeria
 
         private void AgregarAlCarrito(int IDProducto)
         {
-            string texto = txtCantidad.Text;
-            if (int.TryParse(texto, out int numero))
+            if (lblNombreProd.Text == "Producto" && lblSubTotal.Text == "$0.00")
             {
-                if (numero > stock) 
-                {
-                    MessageBox.Show("La cantidad ingresada no puede superar al stock del producto");
-                }
-                else
-                {
-                    
-                    Carro = objCarrito_CLN.DetalleCarrito(IDProducto, numero);
-                    objCarrito_CLN.RestarStock(IDProducto, numero);
-                    MostrarProductos();
-                    c += numero;
-                    a = 0;
-                    foreach (DataRow row in Carro.Rows)
-                    {
-                        a += (decimal)row["Total"];
-                    }
-                    lblTotal.Text = "Cantidad Productos: " + c;
-                    lblTotalCarrito.Text ="$" + a;
-                    dgvCarrito.DataSource = Carro;
-                    
-                }
-                    
+                MessageBox.Show("debe cargar un producto");
             }
             else
             {
-                MessageBox.Show("Ingrese una Cantidad Valida");
+                string texto = txtCantidad.Text;
+                if (int.TryParse(texto, out int numero))
+                {
+                    if (numero > stock)
+                    {
+                        MessageBox.Show("La cantidad ingresada no puede superar al stock del producto");
+                    }
+                    else
+                    {
+
+                        Carro = objCarrito_CLN.DetalleCarrito(IDProducto, numero);
+                        objCarrito_CLN.RestarStock(IDProducto, numero);
+                        MostrarProductos();
+                        c += numero;
+                        a = 0;
+                        foreach (DataRow row in Carro.Rows)
+                        {
+                            a += (decimal)row["Total"];
+                        }
+                        lblTotal.Text = "Cantidad Productos: " + c;
+                        lblTotalCarrito.Text = "$" + a;
+                        dgvCarrito.DataSource = Carro;
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una Cantidad Valida");
+                }
             }
             
         }
@@ -232,6 +239,7 @@ namespace Forrajeria
             btnCancelar.Visible = false;
             txtCantidadEditar.Visible = false;
             txtCantidad.Visible = true;
+            btnAgregarCarro.Enabled=false;
         }
 
 
@@ -285,6 +293,7 @@ namespace Forrajeria
             txtCantidad.Text = "1";
             if (indice > -1)
             {
+                btnAgregarCarro.Enabled = true;    
                 idProd = Convert.ToInt32(dgvProductos.Rows[indice].Cells[0].Value);
                 lblNombreProd.Text = dgvProductos.Rows[indice].Cells[1].Value.ToString();
                 lblPrecio.Text ="$"+ dgvProductos.Rows[indice].Cells[4].Value.ToString();
@@ -361,10 +370,11 @@ namespace Forrajeria
         private void btnAgregarCarro_Click_1(object sender, EventArgs e)
         {
             //actual
+           
+                AgregarAlCarrito(idProd);
 
-            AgregarAlCarrito(idProd);
-
-            limpiarCampos();
+                limpiarCampos();
+            
         }
 
         private void btnPagar_Click_1(object sender, EventArgs e)
@@ -438,5 +448,7 @@ namespace Forrajeria
             dgvCarrito.DataSource = Carro;
             MostrarProductos();
         }
+
+        
     }
 }

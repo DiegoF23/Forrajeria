@@ -153,6 +153,12 @@
     <Compile Include="Carrito.Designer.cs">
       <DependentUpon>Carrito.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadisticaControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticaControl.Designer.cs">
+      <DependentUpon>EstadisticaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </Compile>
     <EmbeddedResource Include="Carrito.resx">
       <DependentUpon>Carrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticaControl.resx">
+      <DependentUpon>EstadisticaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ingreso.resx">
       <DependentUpon>Ingreso.cs</DependentUpon>

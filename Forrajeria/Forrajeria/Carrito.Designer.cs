@@ -61,11 +61,11 @@
             this.lblTotalCarrito = new System.Windows.Forms.Label();
             this.dgvCarrito = new System.Windows.Forms.DataGridView();
             this.gbVenta = new System.Windows.Forms.GroupBox();
+            this.btnCancelarCarro = new FontAwesome.Sharp.IconButton();
             this.btnPagar = new FontAwesome.Sharp.IconButton();
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.lblFecha = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCancelarCarro = new FontAwesome.Sharp.IconButton();
             this.gbCliente.SuspendLayout();
             this.gbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -185,6 +185,7 @@
             // btnAgregarCarro
             // 
             this.btnAgregarCarro.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAgregarCarro.Enabled = false;
             this.btnAgregarCarro.FlatAppearance.BorderSize = 0;
             this.btnAgregarCarro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCarro.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,6 +203,7 @@
             this.btnAgregarCarro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregarCarro.UseVisualStyleBackColor = false;
             this.btnAgregarCarro.Click += new System.EventHandler(this.btnAgregarCarro_Click_1);
+     //       this.btnAgregarCarro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAgregarCarro_MouseClick);
             // 
             // btnCancelar
             // 
@@ -494,6 +496,27 @@
             this.gbVenta.TabStop = false;
             this.gbVenta.Text = "FINALIZAR VENTA";
             // 
+            // btnCancelarCarro
+            // 
+            this.btnCancelarCarro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarCarro.BackColor = System.Drawing.Color.Red;
+            this.btnCancelarCarro.FlatAppearance.BorderSize = 0;
+            this.btnCancelarCarro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCarro.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCancelarCarro.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarCarro.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnCancelarCarro.IconColor = System.Drawing.Color.White;
+            this.btnCancelarCarro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelarCarro.IconSize = 20;
+            this.btnCancelarCarro.Location = new System.Drawing.Point(802, 17);
+            this.btnCancelarCarro.Name = "btnCancelarCarro";
+            this.btnCancelarCarro.Size = new System.Drawing.Size(158, 42);
+            this.btnCancelarCarro.TabIndex = 32;
+            this.btnCancelarCarro.Text = "CANCELAR CARRITO";
+            this.btnCancelarCarro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelarCarro.UseVisualStyleBackColor = false;
+            this.btnCancelarCarro.Click += new System.EventHandler(this.btnCancelarCarro_Click_1);
+            // 
             // btnPagar
             // 
             this.btnPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -538,27 +561,6 @@
             // 
             this.toolTip1.BackColor = System.Drawing.Color.IndianRed;
             this.toolTip1.ForeColor = System.Drawing.SystemColors.Info;
-            // 
-            // btnCancelarCarro
-            // 
-            this.btnCancelarCarro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarCarro.BackColor = System.Drawing.Color.Red;
-            this.btnCancelarCarro.FlatAppearance.BorderSize = 0;
-            this.btnCancelarCarro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarCarro.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCancelarCarro.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarCarro.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnCancelarCarro.IconColor = System.Drawing.Color.White;
-            this.btnCancelarCarro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelarCarro.IconSize = 20;
-            this.btnCancelarCarro.Location = new System.Drawing.Point(802, 17);
-            this.btnCancelarCarro.Name = "btnCancelarCarro";
-            this.btnCancelarCarro.Size = new System.Drawing.Size(158, 42);
-            this.btnCancelarCarro.TabIndex = 32;
-            this.btnCancelarCarro.Text = "CANCELAR CARRITO";
-            this.btnCancelarCarro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelarCarro.UseVisualStyleBackColor = false;
-            this.btnCancelarCarro.Click += new System.EventHandler(this.btnCancelarCarro_Click_1);
             // 
             // Carrito
             // 
