@@ -37,8 +37,12 @@
             this.btnAcceso = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnOcultarContraseña = new System.Windows.Forms.PictureBox();
+            this.btnMostrarContraseña = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOcultarContraseña)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarContraseña)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -74,6 +78,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(199, 30);
             this.txtPass.TabIndex = 4;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // lblPass
             // 
@@ -143,12 +148,43 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnOcultarContraseña
+            // 
+            this.btnOcultarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnOcultarContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOcultarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnOcultarContraseña.Image = ((System.Drawing.Image)(resources.GetObject("btnOcultarContraseña.Image")));
+            this.btnOcultarContraseña.Location = new System.Drawing.Point(293, 273);
+            this.btnOcultarContraseña.Name = "btnOcultarContraseña";
+            this.btnOcultarContraseña.Size = new System.Drawing.Size(23, 23);
+            this.btnOcultarContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnOcultarContraseña.TabIndex = 9;
+            this.btnOcultarContraseña.TabStop = false;
+            this.btnOcultarContraseña.Visible = false;
+            this.btnOcultarContraseña.Click += new System.EventHandler(this.btnOcultarContraseña_Click);
+            // 
+            // btnMostrarContraseña
+            // 
+            this.btnMostrarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnMostrarContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMostrarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnMostrarContraseña.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarContraseña.Image")));
+            this.btnMostrarContraseña.Location = new System.Drawing.Point(293, 273);
+            this.btnMostrarContraseña.Name = "btnMostrarContraseña";
+            this.btnMostrarContraseña.Size = new System.Drawing.Size(23, 23);
+            this.btnMostrarContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMostrarContraseña.TabIndex = 10;
+            this.btnMostrarContraseña.TabStop = false;
+            this.btnMostrarContraseña.Click += new System.EventHandler(this.btnMostrarContraseña_Click);
+            // 
             // Ingreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(356, 397);
+            this.Controls.Add(this.btnMostrarContraseña);
+            this.Controls.Add(this.btnOcultarContraseña);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAcceso);
             this.Controls.Add(this.pictureBox1);
@@ -163,6 +199,8 @@
             this.Text = "LUCKY Forrajeria";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnOcultarContraseña)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarContraseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,6 +216,8 @@
         private FontAwesome.Sharp.IconButton btnAcceso;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnClose;
+        private System.Windows.Forms.PictureBox btnOcultarContraseña;
+        private System.Windows.Forms.PictureBox btnMostrarContraseña;
     }
 }
 

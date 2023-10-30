@@ -133,4 +133,10 @@
   <data name="_1697914113006" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1697914113006.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cajaRegistradora" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cajaRegistradora.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cajaRegistradora1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cajaRegistradora.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

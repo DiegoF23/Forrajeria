@@ -398,7 +398,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvProductos.Location = new System.Drawing.Point(274, 15);
+            this.dgvProductos.Location = new System.Drawing.Point(280, 21);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
