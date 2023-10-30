@@ -193,6 +193,7 @@ namespace Forrajeria
             }
             lblTotal.Text = "Cantidad Productos: " + c;
             lblTotalCarrito.Text = "$" + a;
+
         }
 
         private void AgregarAlCarrito(int IDProducto)
@@ -258,8 +259,9 @@ namespace Forrajeria
 
         private void PagarCarrito()
         {
+            decimal total = a;
             int ClienteID = objCarrito_CLN.InsertCliente(txtNombreCliente.Text, txtDireccion.Text, txtTelefono.Text);
-            int VentaID = objCarrito_CLN.insertVenta(dtpFechaVenta.Value.ToString(),ClienteID);
+            int VentaID = objCarrito_CLN.insertVenta(dtpFechaVenta.Value.ToString(),ClienteID, total);
             foreach (DataRow row in Carro.Rows)
             {
                 objCarrito_CLN.insertDetallesVenta(VentaID,(int)row["Codigo"],(int)row["Cantidad"], (decimal)row["Precio"]);

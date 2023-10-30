@@ -149,7 +149,7 @@ namespace CapaAccesoDatos
             }
             return ClienteID;
         }
-        public int insertVenta(string Fecha, int ClienteID)
+        public int insertVenta(string Fecha, int ClienteID, decimal total)
         {
             Comando.Connection = objConexionCAD.abrirConexion();
             Comando.CommandText = "InsertarVentaYObtenerID";
@@ -157,6 +157,7 @@ namespace CapaAccesoDatos
             Comando.Parameters.Clear();
             Comando.Parameters.AddWithValue("@fecha", Fecha);
             Comando.Parameters.AddWithValue("@ClienteID", ClienteID);
+            Comando.Parameters.AddWithValue("@ImporteTotal", total);
             leerTabla5 = Comando.ExecuteReader();
             Tabla6.Load(leerTabla5);
             objConexionCAD.cerrarConexion();
