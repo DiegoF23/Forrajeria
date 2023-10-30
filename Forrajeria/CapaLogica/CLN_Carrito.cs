@@ -132,10 +132,10 @@ namespace CapaLogica
             IdCliente= objCarritoCAD.insertCliente(Nombre, Direccion, Telefono);
             return IdCliente;
         }
-        public int insertVenta(string Fecha, int ClienteID)
+        public int insertVenta(string Fecha, int ClienteID, decimal total)
         {
-          
-            IDVenta = objCarritoCAD.insertVenta(Fecha, ClienteID);
+           
+            IDVenta = objCarritoCAD.insertVenta(Fecha, ClienteID, total);
             return IDVenta;
         }
         public void insertDetallesVenta(int VentaID, int ProductoID, int Cantidad, decimal PrecioUnitario)

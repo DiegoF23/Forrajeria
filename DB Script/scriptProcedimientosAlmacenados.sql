@@ -244,8 +244,8 @@ CREATE PROCEDURE InsertarVentaYObtenerID
 AS
 BEGIN
     -- Insertar datos en la tabla
-    INSERT INTO Ventas(Fecha, ClienteID)
-	  VALUES (@fecha, @ClienteID);
+    INSERT INTO Ventas(Fecha, ClienteID, ImporteTotal)
+	  VALUES (@fecha, @ClienteID, @ImporteTotal);
 
     -- Obtener el ID generado
     SELECT SCOPE_IDENTITY() AS VentaID;

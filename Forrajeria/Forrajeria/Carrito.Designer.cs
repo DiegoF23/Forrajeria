@@ -64,20 +64,20 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.gbCarrito = new System.Windows.Forms.GroupBox();
-            this.dgvCarrito = new System.Windows.Forms.DataGridView();
-            this.lblTotalCarrito = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalCarrito = new System.Windows.Forms.Label();
+            this.dgvCarrito = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.gbCliente.SuspendLayout();
             this.gbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbVenta.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.gbCarrito.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCliente
@@ -211,7 +211,6 @@
             this.btnAgregarCarro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregarCarro.UseVisualStyleBackColor = false;
             this.btnAgregarCarro.Click += new System.EventHandler(this.btnAgregarCarro_Click_1);
-     //       this.btnAgregarCarro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAgregarCarro_MouseClick);
             // 
             // btnCancelar
             // 
@@ -393,7 +392,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkGray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -514,15 +513,6 @@
             this.panel2.Size = new System.Drawing.Size(998, 394);
             this.panel2.TabIndex = 4;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.gbVenta);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 462);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(998, 66);
-            this.panel4.TabIndex = 6;
-            // 
             // gbCarrito
             // 
             this.gbCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(61)))), ((int)(((byte)(78)))));
@@ -538,6 +528,28 @@
             this.gbCarrito.TabIndex = 2;
             this.gbCarrito.TabStop = false;
             this.gbCarrito.Text = "CARRITO";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(820, 95);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(158, 15);
+            this.lblTotal.TabIndex = 8;
+            this.lblTotal.Text = "Cantidad Productos: XX";
+            // 
+            // lblTotalCarrito
+            // 
+            this.lblTotalCarrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalCarrito.AutoSize = true;
+            this.lblTotalCarrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCarrito.Location = new System.Drawing.Point(816, 120);
+            this.lblTotalCarrito.Name = "lblTotalCarrito";
+            this.lblTotalCarrito.Size = new System.Drawing.Size(178, 37);
+            this.lblTotalCarrito.TabIndex = 8;
+            this.lblTotalCarrito.Text = "$XXXX.XX";
             // 
             // dgvCarrito
             // 
@@ -582,27 +594,14 @@
             this.dgvCarrito.TabIndex = 8;
             this.dgvCarrito.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellClick);
             // 
-            // lblTotalCarrito
+            // panel4
             // 
-            this.lblTotalCarrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalCarrito.AutoSize = true;
-            this.lblTotalCarrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCarrito.Location = new System.Drawing.Point(816, 120);
-            this.lblTotalCarrito.Name = "lblTotalCarrito";
-            this.lblTotalCarrito.Size = new System.Drawing.Size(178, 37);
-            this.lblTotalCarrito.TabIndex = 8;
-            this.lblTotalCarrito.Text = "$XXXX.XX";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(820, 95);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(158, 15);
-            this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = "Cantidad Productos: XX";
+            this.panel4.Controls.Add(this.gbVenta);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 462);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(998, 66);
+            this.panel4.TabIndex = 6;
             // 
             // Carrito
             // 
@@ -625,10 +624,10 @@
             this.gbVenta.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.gbCarrito.ResumeLayout(false);
             this.gbCarrito.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
